@@ -12,7 +12,7 @@ anchor="<!-- DO NOT REMOVE\/EDIT THIS COMMENT - META_TAGS -->"
 for f in /www/hubs/pages/*.html; do 
     for var in $(printenv); do 
     var=$(echo $var | cut -d"=" -f1 ); prefix="turkeyCfg_"; 
-    [[ $var == $prefix* ]] && sed -i "s/$anchor/ <meta name=\"env:${var#$prefix}\" content=\"${!var//\//\\\/}\"\/> $anchor/" $f; 
+    [[ $var == $prefix* ]] && sed -i "s/$anchor/ <meta name=\"env:${var#$prefix}\" content=\"${!var//\//\/}\"\/> $anchor/" $f; 
     done 
 done 
 healthcheck &
