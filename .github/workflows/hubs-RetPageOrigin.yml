@@ -15,8 +15,6 @@ jobs:
       - name: checkout-hubs
         uses: actions/checkout@v2
         with:
-          repository: mozilla/hubs
-          ref: feature/turkey
           path: "./hubs"
       - name: docker setup buildx
         uses: docker/setup-buildx-action@v1
