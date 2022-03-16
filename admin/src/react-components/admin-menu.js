@@ -177,39 +177,6 @@ class Menu extends Component {
               </ListItemIcon>
               <ListItemText className={this.props.classes.text} primary="App Settings" />
             </ListItem>
-            <ListItem
-              className={classNames(this.props.classes.item, this.props.classes.nested)}
-              component={NavLink}
-              key="server-setup"
-              to="/server-setup"
-            >
-              <ListItemIcon className={this.props.classes.icon}>
-                <ViewIcon />
-              </ListItemIcon>
-              <ListItemText className={this.props.classes.text} primary="Server Settings" />
-            </ListItem>
-            <ListItem
-              className={classNames(this.props.classes.item, this.props.classes.nested)}
-              component={NavLink}
-              key="server-access"
-              to="/server-access"
-            >
-              <ListItemIcon className={this.props.classes.icon}>
-                <ViewIcon />
-              </ListItemIcon>
-              <ListItemText className={this.props.classes.text} primary="Server Access" />
-            </ListItem>
-            <ListItem
-              className={classNames(this.props.classes.item, this.props.classes.nested)}
-              component={NavLink}
-              key="content-cdn"
-              to="/content-cdn"
-            >
-              <ListItemIcon className={this.props.classes.icon}>
-                <ViewIcon />
-              </ListItemIcon>
-              <ListItemText className={this.props.classes.text} primary="Content CDN" />
-            </ListItem>
           </List>
         </Collapse>
       </List>
