@@ -1,6 +1,10 @@
 import { Pose } from "../pose";
 import { angleTo4Direction } from "../../../utils/dpad";
 
+function map(v, a, b, c, d) {
+  return ((v - a) / (b - a)) * (d - c) + c;
+}
+
 export const xforms = {
   noop: function() {},
   copy: function(frame, src, dest) {
@@ -26,7 +30,10 @@ export const xforms = {
   },
   deadzone: function(deadzoneSize) {
     return function deadzone(frame, src, dest) {
-      frame.setValueType(dest.value, Math.abs(frame.get(src.value)) < deadzoneSize ? 0 : frame.get(src.value));
+      const value = frame.get(src.value);
+      const absValue = Math.abs(value);
+      const valueSign = Math.sign(value);
+      frame.setValueType(dest.value, absValue < deadzoneSize ? 0 : valueSign * map(absValue, deadzoneSize, 1, 0, 1));
     };
   },
   split_vec2: function(frame, src, dest) {
@@ -79,6 +86,12 @@ export const xforms = {
   falling: function falling(frame, src, dest, prevState) {
     frame.setValueType(dest.value, !frame.get(src.value) && prevState);
     return !!frame.get(src.value);
+  },
+  axisToBool: function(threshold) {
+    return function(frame, src, dest) {
+      const value = frame.get(src.value);
+      frame.setValueType(dest.value, threshold > 0 ? value > threshold : value < threshold);
+    };
   },
   vec2Zero: function(frame, _, dest) {
     frame.setVector2(dest.value, 0, 0);

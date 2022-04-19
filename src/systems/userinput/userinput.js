@@ -5,6 +5,7 @@ import { MouseDevice } from "./devices/mouse";
 import { KeyboardDevice } from "./devices/keyboard";
 import { HudDevice } from "./devices/hud";
 import { XboxControllerDevice } from "./devices/xbox-controller";
+import { SteamDeckControllerDevice } from "./devices/steam-deck-controller";
 import { OculusGoControllerDevice } from "./devices/oculus-go-controller";
 import { GearVRControllerDevice } from "./devices/gear-vr-controller";
 import { OculusTouchControllerDevice } from "./devices/oculus-touch-controller";
@@ -31,6 +32,7 @@ import {
 } from "./bindings/vive-user";
 import { wmrUserBindings } from "./bindings/windows-mixed-reality-user";
 import { xboxControllerUserBindings } from "./bindings/xbox-controller-user";
+import { steamDeckControllerUserBindings } from "./bindings/steam-deck-controller-user";
 import { daydreamUserBindings } from "./bindings/daydream-user";
 import { cardboardUserBindings } from "./bindings/cardboard-user";
 
@@ -271,6 +273,7 @@ AFRAME.registerSystem("userinput", {
 
     const nonVRGamepadMappings = new Map();
     nonVRGamepadMappings.set(XboxControllerDevice, xboxControllerUserBindings);
+    nonVRGamepadMappings.set(SteamDeckControllerDevice, steamDeckControllerUserBindings);
     nonVRGamepadMappings.set(GamepadDevice, gamepadBindings);
 
     const addExtraMappings = activeDevice => {
@@ -381,6 +384,9 @@ AFRAME.registerSystem("userinput", {
       } else if (e.gamepad.mapping === "standard") {
         // Our XboxController device and bindings should be generic enough for most gamepads.
         gamepadDevice = new XboxControllerDevice(e.gamepad);
+      } else if (e.gamepad.id.toLowerCase().includes("microsoft x-box 360")) {
+        // Steam Deck gives us a gamepad with non-standard mappings, so we've got to remap those.
+        gamepadDevice = new SteamDeckControllerDevice(e.gamepad);
       } else {
         // This device doesn't actually have any bindings, but we need to fallback to something.
         gamepadDevice = new GamepadDevice(e.gamepad);

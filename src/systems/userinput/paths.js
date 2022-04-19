@@ -398,3 +398,17 @@ paths.device.webxr.left = {
   pose: `${webxr}left/pose`,
   matrix: `${webxr}left/matrix`
 };
+
+const deck = "/device/deck/";
+paths.device.deck = {
+  v: name => `/vars/deck/${name}`,
+  button: buttonName => ({
+    pressed: `${deck}button/${buttonName}/pressed`,
+    touched: `${deck}button/${buttonName}/touched`,
+    value: `${deck}button/${buttonName}/value`
+  }),
+  axis: axisName => {
+    return `${deck}axis/${axisName}`;
+  },
+  axesSum: `${deck}axis/sum`
+};

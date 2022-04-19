@@ -68,6 +68,7 @@ AFRAME.registerSystem("userinput-debug", {
           z-index: 2;
           left: 0; bottom: 0;
           background: white;
+          color: black;
           white-space: pre;
           font-family: monospace;
           font-size: 8pt;
