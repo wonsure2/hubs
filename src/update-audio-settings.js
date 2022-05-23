@@ -1,6 +1,7 @@
 import {
   AudioType,
   SourceType,
+  PanningModelType,
   MediaAudioDefaults,
   AvatarAudioDefaults,
   TargetAudioDefaults
@@ -21,11 +22,23 @@ function applySettings(audio, settings) {
     audio.setRolloffFactor(settings.rolloffFactor);
     audio.setRefDistance(settings.refDistance);
     audio.setMaxDistance(settings.maxDistance);
+    audio.panner.panningModel = settings.panningModel;
     audio.panner.coneInnerAngle = settings.coneInnerAngle;
     audio.panner.coneOuterAngle = settings.coneOuterAngle;
     audio.panner.coneOuterGain = settings.coneOuterGain;
   }
   audio.gain.gain.setTargetAtTime(settings.gain, audio.context.currentTime, 0.1);
+}
+
+export function getOverriddenPanningModelType() {
+  switch (APP.store.state.preferences.audioPanningQuality) {
+    case "High":
+      return PanningModelType.HRTF;
+    case "Low":
+      return PanningModelType.EqualPower;
+    default:
+      return null;
+  }
 }
 
 export function getCurrentAudioSettings(el) {
@@ -35,9 +48,19 @@ export function getCurrentAudioSettings(el) {
   const audioOverrides = APP.audioOverrides.get(el);
   const audioDebugPanelOverrides = APP.audioDebugPanelOverrides.get(sourceType);
   const zoneSettings = APP.zoneOverrides.get(el);
-  const preferencesOverrides = APP.store.state.preferences.disableLeftRightPanning
-    ? { audioType: AudioType.Stereo }
-    : {};
+
+  const preferencesOverrides = {};
+
+  const overriddenPanningModelType = getOverriddenPanningModelType();
+
+  if (overriddenPanningModelType !== null) {
+    preferencesOverrides.panningModel = overriddenPanningModelType;
+  }
+
+  if (APP.store.state.preferences.disableLeftRightPanning) {
+    preferencesOverrides.audioType = AudioType.Stereo;
+  }
+
   const safariOverrides = isSafari() ? { audioType: AudioType.Stereo } : {};
   const settings = Object.assign(
     {},
