@@ -6,7 +6,6 @@ import {
   AvatarAudioDefaults,
   TargetAudioDefaults
 } from "./components/audio-params";
-import { isSafari } from "./utils/detect-safari";
 
 const defaultSettingsForSourceType = Object.freeze(
   new Map([
@@ -67,8 +66,7 @@ export function getCurrentAudioSettings(el) {
     audioOverrides,
     audioDebugPanelOverrides,
     zoneSettings,
-    preferencesOverrides,
-    safariOverrides
+    preferencesOverrides
   );
 
   if (APP.clippingState.has(el) || APP.mutedState.has(el)) {
