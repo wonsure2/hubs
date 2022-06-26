@@ -14,10 +14,16 @@
   overflow: hidden;
   display: flex;
   background-color: theme.$tile-bg-color;
-  border-radius: 12px;
+  //border-radius: 12px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 
   img, video, :local(.create-tile-content) {
-    border-radius: 12px;
+    //border-radius: 12px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -129,8 +135,19 @@
 }
 
 :local(.info) {
-  margin-top: 8px;
+  //margin-top: 8px;
   color: theme.$text1-color;
+  //color: #f9f9f9;
+  //background-image: url("../../assets/images/yuanjing/home/room-card@2x.png");
+  //background-image: linear-gradient(45deg, #948b88, rgb(45 42 33));
+  //background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--background2-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-position: center bottom;
+  background-size: cover;
+  padding: 30px 30px;
+  min-height: 160px;
 
   & > * {
     white-space: nowrap;
@@ -145,6 +162,9 @@
 :local(.description) {
   display: flex;
   justify-content: space-between;
+  //color: #f9f9f9;
+  font-weight: normal;
+  margin-top: 16px;
 
   & > * {
     display: flex;
@@ -164,7 +184,7 @@
     *[stroke=\#000] {
       stroke: theme.$link-color;
     }
-  
+
     *[fill=\#000] {
       fill: theme.$link-color;
     }
@@ -173,7 +193,7 @@
       *[stroke=\#000] {
         stroke: theme.$link-color-hover;
       }
-    
+
       *[fill=\#000] {
         fill: theme.$link-color-hover;
       }
@@ -183,7 +203,7 @@
       *[stroke=\#000] {
         stroke: theme.$link-color-pressed;
       }
-    
+
       *[fill=\#000] {
         fill: theme.$link-color-pressed;
       }
@@ -203,7 +223,9 @@
   text-align: center;
   color: theme.$tile-text-color;
   font-weight: theme.$font-weight-bold;
-  border-radius: 12px;
+  //border-radius: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   flex: 1;
 
   p {

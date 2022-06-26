@@ -963,22 +963,22 @@ class PreferencesScreen extends Component {
             step: 5,
             digits: 0
           },
-          {
-            key: "disableMovement",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
-          {
-            key: "disableBackwardsMovement",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
-          {
-            key: "disableStrafing",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
-          {
-            key: "disableTeleporter",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
+          // {
+          //   key: "disableMovement",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
+          // {
+          //   key: "disableBackwardsMovement",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
+          // {
+          //   key: "disableStrafing",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
+          // {
+          //   key: "disableTeleporter",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
           {
             key: "movementSpeedModifier",
             prefType: PREFERENCE_LIST_ITEM_TYPE.NUMBER_WITH_RANGE,
@@ -1018,50 +1018,50 @@ class PreferencesScreen extends Component {
             step: 5,
             digits: 0
           },
-          {
-            key: "avatarVoiceLevels",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.MAP_COUNT,
-            defaultValue: 0,
-            text: intl.formatMessage({
-              id: "preferences-screen.preference.avatar-volumes.entries",
-              defaultMessage: "Entries"
-            })
-          },
-          {
-            key: "disableSoundEffects",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
-          {
-            key: "disableEchoCancellation",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
-            promptForRefresh: true
-          },
-          {
-            key: "disableNoiseSuppression",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
-            promptForRefresh: true
-          },
-          {
-            key: "disableAutoGainControl",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
-            promptForRefresh: true
-          },
-          {
-            key: "enableAudioClipping",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
-          {
-            key: "audioClippingThreshold",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.NUMBER_WITH_RANGE,
-            min: CLIPPING_THRESHOLD_MIN,
-            max: CLIPPING_THRESHOLD_MAX,
-            step: CLIPPING_THRESHOLD_STEP,
-            digits: 3
-          },
-          {
-            key: "showAudioDebugPanel",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          }
+          // {
+          //   key: "avatarVoiceLevels",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.MAP_COUNT,
+          //   defaultValue: 0,
+          //   text: intl.formatMessage({
+          //     id: "preferences-screen.preference.avatar-volumes.entries",
+          //     defaultMessage: "Entries"
+          //   })
+          // },
+          // {
+          //   key: "disableSoundEffects",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
+          // {
+          //   key: "disableEchoCancellation",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
+          //   promptForRefresh: true
+          // },
+          // {
+          //   key: "disableNoiseSuppression",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
+          //   promptForRefresh: true
+          // },
+          // {
+          //   key: "disableAutoGainControl",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
+          //   promptForRefresh: true
+          // },
+          // {
+          //   key: "enableAudioClipping",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
+          // {
+          //   key: "audioClippingThreshold",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.NUMBER_WITH_RANGE,
+          //   min: CLIPPING_THRESHOLD_MIN,
+          //   max: CLIPPING_THRESHOLD_MAX,
+          //   step: CLIPPING_THRESHOLD_STEP,
+          //   digits: 3
+          // },
+          // {
+          //   key: "showAudioDebugPanel",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // }
         ]
       ],
       [
@@ -1072,11 +1072,11 @@ class PreferencesScreen extends Component {
             prefType: PREFERENCE_LIST_ITEM_TYPE.SELECT,
             options: availableLocales
           },
-          {
-            key: "theme",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.SELECT,
-            options: availableThemes
-          },
+          // {
+          //   key: "theme",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.SELECT,
+          //   options: availableThemes
+          // },
           { key: "maxResolution", prefType: PREFERENCE_LIST_ITEM_TYPE.MAX_RESOLUTION },
           {
             key: "nametagVisibility",
@@ -1156,15 +1156,15 @@ class PreferencesScreen extends Component {
             ],
             promptForRefresh: true
           },
-          {
-            key: "enableDynamicShadows",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
-            defaultBool: false
-          },
-          {
-            key: "disableAutoPixelRatio",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
+          // {
+          //   key: "enableDynamicShadows",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX,
+          //   defaultBool: false
+          // },
+          // {
+          //   key: "disableAutoPixelRatio",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
           {
             key: "allowMultipleHubsInstances",
             prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
@@ -1181,10 +1181,10 @@ class PreferencesScreen extends Component {
             key: "lazyLoadSceneMedia",
             prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
           },
-          {
-            key: "preferMobileObjectInfoPanel",
-            prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
-          },
+          // {
+          //   key: "preferMobileObjectInfoPanel",
+          //   prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
+          // },
           {
             key: "animateWaypointTransitions",
             prefType: PREFERENCE_LIST_ITEM_TYPE.CHECK_BOX
@@ -1231,10 +1231,10 @@ class PreferencesScreen extends Component {
         CATEGORY_AUDIO,
         [
           { items: items.get(CATEGORY_AUDIO) },
-          {
-            name: intl.formatMessage(categoryNames[CATEGORY_ACCESSIBILITY]),
-            items: items.get(CATEGORY_ACCESSIBILITY)
-          }
+          // {
+          //   name: intl.formatMessage(categoryNames[CATEGORY_ACCESSIBILITY]),
+          //   items: items.get(CATEGORY_ACCESSIBILITY)
+          // }
         ]
       ],
       [

@@ -104,37 +104,37 @@ export function RoomSettingsSidebar({
           error={errors.room_size}
           fullWidth
         />
-        <RadioInputField
-          label={<FormattedMessage id="room-settings-sidebar.room-access" defaultMessage="Room Access" />}
-          fullWidth
-        >
-          <RadioInputOption
-            name="entry_mode"
-            value="allow"
-            label={<FormattedMessage id="room-settings-sidebar.access-shared-link" defaultMessage="Shared link" />}
-            description={
-              <FormattedMessage
-                id="room-settings-sidebar.access-shared-link-description"
-                defaultMessage="Only those with the link can join"
-              />
-            }
-            ref={register}
-            error={errors.entry_mode}
-          />
-          <RadioInputOption
-            name="entry_mode"
-            value="invite"
-            label={<FormattedMessage id="room-settings-sidebar.access-invite" defaultMessage="Invite only" />}
-            description={
-              <FormattedMessage
-                id="room-settings-sidebar.access-invite-description"
-                defaultMessage="Invite people with a link that can be revoked"
-              />
-            }
-            ref={register}
-            error={errors.entry_mode}
-          />
-        </RadioInputField>
+        {/*<RadioInputField*/}
+        {/*  label={<FormattedMessage id="room-settings-sidebar.room-access" defaultMessage="Room Access" />}*/}
+        {/*  fullWidth*/}
+        {/*>*/}
+        {/*  <RadioInputOption*/}
+        {/*    name="entry_mode"*/}
+        {/*    value="allow"*/}
+        {/*    label={<FormattedMessage id="room-settings-sidebar.access-shared-link" defaultMessage="Shared link" />}*/}
+        {/*    description={*/}
+        {/*      <FormattedMessage*/}
+        {/*        id="room-settings-sidebar.access-shared-link-description"*/}
+        {/*        defaultMessage="Only those with the link can join"*/}
+        {/*      />*/}
+        {/*    }*/}
+        {/*    ref={register}*/}
+        {/*    error={errors.entry_mode}*/}
+        {/*  />*/}
+        {/*  <RadioInputOption*/}
+        {/*    name="entry_mode"*/}
+        {/*    value="invite"*/}
+        {/*    label={<FormattedMessage id="room-settings-sidebar.access-invite" defaultMessage="Invite only" />}*/}
+        {/*    description={*/}
+        {/*      <FormattedMessage*/}
+        {/*        id="room-settings-sidebar.access-invite-description"*/}
+        {/*        defaultMessage="Invite people with a link that can be revoked"*/}
+        {/*      />*/}
+        {/*    }*/}
+        {/*    ref={register}*/}
+        {/*    error={errors.entry_mode}*/}
+        {/*  />*/}
+        {/*</RadioInputField>*/}
         {entryMode === "invite" && (
           <InviteLinkInputField fetchingInvite={fetchingInvite} inviteUrl={inviteUrl} onRevokeInvite={onRevokeInvite} />
         )}
@@ -166,35 +166,35 @@ export function RoomSettingsSidebar({
               }
               ref={register}
             />
-            <div className={styles.permissionsGroup}>
-              <ToggleInput
-                name="member_permissions.spawn_camera"
-                label={<FormattedMessage id="room-settings-sidebar.spawn-camera" defaultMessage="Create cameras" />}
-                ref={register}
-                disabled={!spawnAndMoveMedia}
-              />
-              <ToggleInput
-                name="member_permissions.pin_objects"
-                label={<FormattedMessage id="room-settings-sidebar.pin-objects" defaultMessage="Pin objects" />}
-                ref={register}
-                disabled={!spawnAndMoveMedia}
-              />
-            </div>
-            <ToggleInput
-              name="member_permissions.spawn_drawing"
-              label={<FormattedMessage id="room-settings-sidebar.spawn-drawing" defaultMessage="Create drawings" />}
-              ref={register}
-            />
-            <ToggleInput
-              name="member_permissions.spawn_emoji"
-              label={<FormattedMessage id="room-settings-sidebar.spawn-emoji" defaultMessage="Create emoji" />}
-              ref={register}
-            />
-            <ToggleInput
-              name="member_permissions.fly"
-              label={<FormattedMessage id="room-settings-sidebar.fly" defaultMessage="Allow flying" />}
-              ref={register}
-            />
+            {/*<div className={styles.permissionsGroup}>*/}
+            {/*  <ToggleInput*/}
+            {/*    name="member_permissions.spawn_camera"*/}
+            {/*    label={<FormattedMessage id="room-settings-sidebar.spawn-camera" defaultMessage="Create cameras" />}*/}
+            {/*    ref={register}*/}
+            {/*    disabled={!spawnAndMoveMedia}*/}
+            {/*  />*/}
+            {/*  <ToggleInput*/}
+            {/*    name="member_permissions.pin_objects"*/}
+            {/*    label={<FormattedMessage id="room-settings-sidebar.pin-objects" defaultMessage="Pin objects" />}*/}
+            {/*    ref={register}*/}
+            {/*    disabled={!spawnAndMoveMedia}*/}
+            {/*  />*/}
+            {/*</div>*/}
+            {/*<ToggleInput*/}
+            {/*  name="member_permissions.spawn_drawing"*/}
+            {/*  label={<FormattedMessage id="room-settings-sidebar.spawn-drawing" defaultMessage="Create drawings" />}*/}
+            {/*  ref={register}*/}
+            {/*/>*/}
+            {/*<ToggleInput*/}
+            {/*  name="member_permissions.spawn_emoji"*/}
+            {/*  label={<FormattedMessage id="room-settings-sidebar.spawn-emoji" defaultMessage="Create emoji" />}*/}
+            {/*  ref={register}*/}
+            {/*/>*/}
+            {/*<ToggleInput*/}
+            {/*  name="member_permissions.fly"*/}
+            {/*  label={<FormattedMessage id="room-settings-sidebar.fly" defaultMessage="Allow flying" />}*/}
+            {/*  ref={register}*/}
+            {/*/>*/}
           </div>
         </InputField>
         <ApplyButton type="submit" />

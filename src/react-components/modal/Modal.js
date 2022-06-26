@@ -11,10 +11,14 @@ export function Modal({
   children,
   contentClassName,
   className,
-  disableFullscreen
+  disableFullscreen,
+  style
 }) {
   return (
-    <div className={classNames(styles.modal, { [styles.smFullscreen]: !disableFullscreen }, className)}>
+    <div
+      className={classNames(styles.modal, { [styles.smFullscreen]: !disableFullscreen }, className)}
+      style={style ?? {}}
+    >
       {(title || beforeTitle || afterTitle) && (
         <div className={styles.header}>
           <div className={styles.beforeTitle}>{beforeTitle}</div>
@@ -35,5 +39,6 @@ Modal.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   contentClassName: PropTypes.string,
-  disableFullscreen: PropTypes.bool
+  disableFullscreen: PropTypes.bool,
+  style: PropTypes.object
 };

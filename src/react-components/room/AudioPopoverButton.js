@@ -61,7 +61,8 @@ export const AudioPopoverButton = ({
             onClick={togglePopover}
             type={"left"}
             className={popoverVisible ? styles.arrowButton : styles.arrowButtonSelected}
-            title={"Audio Settings"}
+            title={"音频设置"}
+            centerIcon
           />
           <ToolbarButton
             ref={micButtonRef}
@@ -71,6 +72,7 @@ export const AudioPopoverButton = ({
             onClick={onChangeMicrophoneMuted}
             statusColor={isMicrophoneMuted || !isMicrophoneEnabled ? "disabled" : "enabled"}
             type={"right"}
+            darkTextColor
           />
         </div>
       )}

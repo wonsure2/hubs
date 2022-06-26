@@ -22,7 +22,7 @@ export const presets = [
 ];
 
 export const Button = memo(
-  forwardRef(({ as, sm, lg, xl, thin, thick, preset, className, children, ...rest }, ref) => {
+  forwardRef(({ style, as, sm, lg, xl, thin, thick, preset, className, children, ...rest }, ref) => {
     const ButtonComponent = as;
     const buttonProps = ButtonComponent === "button" ? { type: "button" } : {};
 
@@ -44,6 +44,7 @@ export const Button = memo(
         {...buttonProps}
         {...rest}
         ref={ref}
+        style={style ?? null}
       >
         {children}
       </ButtonComponent>
@@ -52,6 +53,7 @@ export const Button = memo(
 );
 
 Button.propTypes = {
+  style: PropTypes.object,
   as: PropTypes.elementType,
   preset: PropTypes.oneOf(presets),
   className: PropTypes.string,

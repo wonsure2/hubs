@@ -3,14 +3,18 @@ import { FormattedMessage } from "react-intl";
 import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
 import { Button } from "../input/Button";
 import { useCssBreakpoints } from "react-use-css-breakpoints";
+import PropTypes from "prop-types";
+import { SignInButton } from "./SignInButton";
 
-export function CreateRoomButton() {
+export function CreateRoomButton(props) {
   const breakpoint = useCssBreakpoints();
 
   return (
     <Button
-      thick={breakpoint === "sm" || breakpoint === "md"}
-      xl={breakpoint !== "sm" && breakpoint !== "md"}
+      // thick={breakpoint === "sm" || breakpoint === "md"}
+      // xl={breakpoint !== "sm" && breakpoint !== "md"}
+      lg
+      style={props.style ?? null}
       preset="landing"
       onClick={e => {
         e.preventDefault();
@@ -21,3 +25,7 @@ export function CreateRoomButton() {
     </Button>
   );
 }
+
+CreateRoomButton.propTypes = {
+  style: PropTypes.object
+};

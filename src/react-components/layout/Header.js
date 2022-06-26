@@ -26,62 +26,62 @@ export function Header({
   isHmc
 }) {
   return (
-    <header>
+    <header style={{ zIndex: 10 }}>
       <Container as="div" className={styles.container}>
         <nav>
           <ul>
             <li>
               <a href="/" className={styles.homeLink}>
                 {/*
-                This forceConfigurableLogo prop is a bit of a hack, since we want the home page on HMC to use our 
-                configured logo, which is left-aligned, as opposed to the logo that we typically used for HMC, 
+                This forceConfigurableLogo prop is a bit of a hack, since we want the home page on HMC to use our
+                configured logo, which is left-aligned, as opposed to the logo that we typically used for HMC,
                 which is center-aligned.
                 */}
                 <AppLogo forceConfigurableLogo />
               </a>
             </li>
-            {enableSpoke && (
-              <li>
-                <a href="/spoke">
-                  {isHmc ? <FormattedMessage id="header.spoke" defaultMessage="Spoke" /> : editorName}
-                </a>
-              </li>
-            )}
-            {showDocsLink && (
-              <li>
-                <a href={docsUrl}>
-                  <FormattedMessage id="header.docs" defaultMessage="Guides" />
-                </a>
-              </li>
-            )}
-            {showSourceLink && (
-              <li>
-                <a href="https://github.com/mozilla/hubs">
-                  <FormattedMessage id="header.source" defaultMessage="Developers" />
-                </a>
-              </li>
-            )}
-            {showCommunityLink && (
-              <li>
-                <a href={communityUrl}>
-                  <FormattedMessage id="header.community" defaultMessage="Community" />
-                </a>
-              </li>
-            )}
-            {showCloud && (
-              <li>
-                <a href="/cloud">
-                  <FormattedMessage id="header.cloud" defaultMessage="Hubs Cloud" />
-                </a>
-              </li>
-            )}
-            {isHmc && (
-              <li>
-                <a href="/labs">
-                  <FormattedMessage id="header.labs" defaultMessage="Labs" />
-                </a>
-              </li>
-            )}
+            {/*{enableSpoke && (*/}
+            {/*  <li>*/}
+            {/*    <a href="/spoke">*/}
+            {/*      {isHmc ? <FormattedMessage id="header.spoke" defaultMessage="Spoke" /> : editorName}*/}
+            {/*    </a>*/}
+            {/*  </li>*/}
+            {/*)}*/}
+            {/*{showDocsLink && (*/}
+            {/*  <li>*/}
+            {/*    <a href={docsUrl}>*/}
+            {/*      <FormattedMessage id="header.docs" defaultMessage="Guides" />*/}
+            {/*    </a>*/}
+            {/*  </li>*/}
+            {/*)}*/}
+            {/*{showSourceLink && (*/}
+            {/*  <li>*/}
+            {/*    <a href="https://github.com/mozilla/hubs">*/}
+            {/*      <FormattedMessage id="header.source" defaultMessage="Developers" />*/}
+            {/*    </a>*/}
+            {/*  </li>*/}
+            {/*)}*/}
+            {/*{showCommunityLink && (*/}
+            {/*  <li>*/}
+            {/*    <a href={communityUrl}>*/}
+            {/*      <FormattedMessage id="header.community" defaultMessage="Community" />*/}
+            {/*    </a>*/}
+            {/*  </li>*/}
+            {/*)}*/}
+            {/*{showCloud && (*/}
+            {/*  <li>*/}
+            {/*    <a href="/cloud">*/}
+            {/*      <FormattedMessage id="header.cloud" defaultMessage="Hubs Cloud" />*/}
+            {/*    </a>*/}
+            {/*  </li>*/}
+            {/*)}*/}
+            {/*{isHmc && (*/}
+            {/*  <li>*/}
+            {/*    <a href="/labs">*/}
+            {/*      <FormattedMessage id="header.labs" defaultMessage="Labs" />*/}
+            {/*    </a>*/}
+            {/*  </li>*/}
+            {/*)}*/}
             {isAdmin && (
               <li>
                 <a href="/admin" rel="noreferrer noopener">
@@ -98,22 +98,27 @@ export function Header({
         <div className={styles.signIn}>
           {isSignedIn ? (
             <div>
-              <span>
+              <span style={{ color: "#F9F9F9" }}>
                 <FormattedMessage
                   id="header.signed-in-as"
                   defaultMessage="Signed in as {email}"
-                  values={{ email: maskEmail(email) }}
+                  // values={{ email: maskEmail(email) }}
+                  values={{ email }}
                 />
               </span>
-              <a href="#" onClick={onSignOut}>
+              <a style={{ color: "#F9F9F9" }} href="#" onClick={onSignOut}>
                 <FormattedMessage id="header.sign-out" defaultMessage="Sign Out" />
               </a>
             </div>
           ) : (
-            <SignInButton />
+            <div>
+              <a style={{ color: "#F9F9F9" }} href="/signin">
+                <FormattedMessage id="header.sign-in" defaultMessage="Sign in/Sign up" />
+              </a>
+            </div>
           )}
         </div>
-        {isHmc ? <SocialBar mobile /> : null}
+        {/*{isHmc ? <SocialBar mobile /> : null}*/}
       </Container>
     </header>
   );

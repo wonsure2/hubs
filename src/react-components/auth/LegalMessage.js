@@ -21,18 +21,18 @@ export function LegalMessage({ termsUrl, privacyUrl }) {
     [privacyUrl]
   );
 
-  if (termsUrl && privacyUrl) {
-    return (
-      <FormattedMessage
-        id="legal-message.tos-and-privacy"
-        defaultMessage="By proceeding, you agree to the <toslink>terms of use</toslink> and <privacylink>privacy notice</privacylink>."
-        values={{
-          toslink,
-          privacylink
-        }}
-      />
-    );
-  }
+  // if (termsUrl && privacyUrl) {
+  //   return (
+  //     <FormattedMessage
+  //       id="legal-message.tos-and-privacy"
+  //       defaultMessage="By proceeding, you agree to the <toslink>terms of use</toslink> and <privacylink>privacy notice</privacylink>."
+  //       values={{
+  //         toslink,
+  //         privacylink
+  //       }}
+  //     />
+  //   );
+  // }
 
   if (termsUrl && !privacyUrl) {
     return (

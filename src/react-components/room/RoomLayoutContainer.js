@@ -8,6 +8,7 @@ export function RoomLayoutContainer({ store, scene, ...rest }) {
 
   useResizeViewport(viewportRef, store, scene);
 
+  // 注释上面全部代码，并将 viewportRef 属性传入 null 来提高开发性能。
   return <RoomLayout viewportRef={viewportRef} {...rest} />;
 }
 

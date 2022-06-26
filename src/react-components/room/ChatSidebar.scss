@@ -43,6 +43,7 @@
 :local(.message-bubble) {
   background-color: theme.$chat-bubble-bg-color-received;
   border-radius: 19px;
+  border-bottom-left-radius: 0;
   margin: 2px;
   padding: 10px 16px;
   max-width: 80%;
@@ -68,6 +69,8 @@
 
   :local(.message-bubble) {
     background-color: theme.$chat-bubble-bg-color-sent;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 0;
     color: theme.$chat-bubble-text-color-sent;
     align-self: flex-end;
 

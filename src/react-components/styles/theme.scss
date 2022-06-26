@@ -30,29 +30,37 @@ $black: #000000;
 $black-hover: #404040;
 $black-pressed: #7A7A7A;
 
-$red: #F5325C;
-$red-hover: #F64B70;
-$red-pressed: #F41A49;
+$red: #F53F3F;
+$red-hover: #F76560;
+$red-pressed: #CB272D;
 
-$orange: #FF8500;
-$orange-hover: #FF911A;
-$orange-pressed: #E67800;
+$orange: #FF7D00;
+$orange-hover: #FF9A2E;
+$orange-pressed: #D25F00;
 
-$green: #7ED320;
-$green-hover: #8CDF2F;
-$green-pressed: #72BE1D;
+$green: #00B42A;
+$green-hover: #23C343;
+$green-pressed: #009A29;
 
-$blue: #007AB8;
-$blue-hover: #008BD1;
-$blue-pressed: #00699E;
+$blue: #165DFF;
+$blue-hover: #4080FF;
+$blue-pressed: #0E42D2;
 
-$purple: #7854F6;
-$purple-hover: #8C6EF7;
-$purple-pressed: #663DF5;
+$purple: #E13EDB;
+$purple-hover: #D91AD9;
+$purple-pressed: #B010B6;
+
+$gold: #F7BA1E;
+$gold-hover: #F9CC45;
+$gold-pressed: #CC9213;
+
+$cyan: #14C9C9;
+$cyan-hover: #37D4CF;
+$cyan-pressed: #0DA5AA;
 
 $recessed-bg: #f9f9f9;
 
-$yellow: #FFC000;
+$yellow: #FADC19;
 
 // Brand Colors
 $spoke-primary-color: #2F80ED;
@@ -154,6 +162,14 @@ $accent5-color-pressed: var(--accent5-color-pressed);
 $accent6-color: var(--accent6-color);
 $accent6-color-hover: var(--accent6-color-hover);
 $accent6-color-pressed: var(--accent6-color-pressed);
+
+$accent7-color: var(--accent7-color);
+$accent7-color-hover: var(--accent7-color-hover);
+$accent7-color-pressed: var(--accent7-color-pressed);
+
+$accent8-color: var(--accent8-color);
+$accent8-color-hover: var(--accent8-color-hover);
+$accent8-color-pressed: var(--accent8-color-pressed);
 
 $primary-color: var(--primary-color);
 $primary-color-hover: var(--primary-color-hover);

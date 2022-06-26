@@ -23,14 +23,14 @@ function ReactionPopoverContent({ items, presence, onToggleHandRaised, ...rest }
       <Row noWrap>
         <ImageGridPopover items={items} {...rest} />
       </Row>
-      <Row>
-        <label className={styles.label}>
-          <FormattedMessage id="reaction-popover.action" defaultMessage="Actions" />
-        </label>
-      </Row>
-      <Row nowrap>
-        <HandRaisedButton active={presence.hand_raised} onClick={onToggleHandRaised} />
-      </Row>
+      {/*<Row>*/}
+      {/*  <label className={styles.label}>*/}
+      {/*    <FormattedMessage id="reaction-popover.action" defaultMessage="操作" />*/}
+      {/*  </label>*/}
+      {/*</Row>*/}
+      {/*<Row nowrap>*/}
+      {/*  <HandRaisedButton active={presence.hand_raised} onClick={onToggleHandRaised} />*/}
+      {/*</Row>*/}
     </Column>
   );
 }
@@ -124,7 +124,7 @@ export function ReactionPopoverButton({ items, presence, onToggleHandRaised }) {
             }
           }}
           label={title}
-          preset="accent2"
+          preset="accent4"
         />
       )}
     </Popover>

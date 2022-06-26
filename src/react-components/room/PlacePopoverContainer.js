@@ -48,20 +48,20 @@ export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistorie
             // TODO: Create text/link dialog
             // { id: "text", icon: TextIcon, color: "blue", label: "Text" },
             // { id: "link", icon: LinkIcon, color: "blue", label: "Link" },
-            configs.integration("tenor") && {
-              id: "gif",
-              icon: GIFIcon,
-              color: "accent2",
-              label: <FormattedMessage id="place-popover.item-type.gif" defaultMessage="GIF" />,
-              onSelect: () => mediaSearchStore.sourceNavigate("gifs")
-            },
-            configs.integration("sketchfab") && {
-              id: "model",
-              icon: ObjectIcon,
-              color: "accent2",
-              label: <FormattedMessage id="place-popover.item-type.model" defaultMessage="3D Model" />,
-              onSelect: () => mediaSearchStore.sourceNavigate("sketchfab")
-            },
+            // configs.integration("tenor") && {
+            //   id: "gif",
+            //   icon: GIFIcon,
+            //   color: "accent2",
+            //   label: <FormattedMessage id="place-popover.item-type.gif" defaultMessage="GIF" />,
+            //   onSelect: () => mediaSearchStore.sourceNavigate("gifs")
+            // },
+            // configs.integration("sketchfab") && {
+            //   id: "model",
+            //   icon: ObjectIcon,
+            //   color: "accent2",
+            //   label: <FormattedMessage id="place-popover.item-type.model" defaultMessage="3D Model" />,
+            //   onSelect: () => mediaSearchStore.sourceNavigate("sketchfab")
+            // },
             {
               id: "avatar",
               icon: AvatarIcon,

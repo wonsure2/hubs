@@ -19,7 +19,7 @@
 
 :local(.icon-container) {
   position: relative;
-  border-radius: 9999px;
+  border-radius: 6px;
   width: 48px;
   height: 48px;
   display: flex;
@@ -56,12 +56,12 @@
       *[stroke=\#000] {
         stroke: theme.$toolbar-basic-icon-color;
       }
-  
+
       *[fill=\#000] {
         fill: theme.$toolbar-basic-icon-color;
       }
     }
-  }  
+  }
 
   &:hover :local(.icon-container) {
     border: 1px solid theme.$toolbar-basic-border-color;
@@ -82,7 +82,7 @@
       *[stroke=\#000] {
         stroke: theme.$toolbar-basic-selected-icon-color;
       }
-  
+
       *[fill=\#000] {
         fill: theme.$toolbar-basic-selected-icon-color;
       }
@@ -97,7 +97,7 @@
         background-color: theme.$toolbar-basic-color-hover;
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         background-color: theme.$toolbar-basic-color-pressed;
@@ -113,7 +113,7 @@
 :local(.primary) {
   :local(.icon-container) {
     background-color: theme.$primary-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$primary-color-hover;
@@ -132,7 +132,7 @@
         *[stroke=\#000] {
           stroke: theme.$toolbar-basic-icon-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$toolbar-basic-icon-color;
         }
@@ -140,7 +140,7 @@
     }
 
     label {
-      color: theme.$primary-color;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -152,14 +152,14 @@
           *[stroke=\#000] {
             stroke: theme.$primary-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$primary-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$primary-color-pressed;
@@ -168,7 +168,7 @@
           *[stroke=\#000] {
             stroke: theme.$primary-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$primary-color-pressed;
           }
@@ -183,7 +183,7 @@
   :local(.icon-container) {
     background-color: theme.$accept-color;
     border-color: theme.$accept-border-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$accept-color-hover;
@@ -202,7 +202,7 @@
         *[stroke=\#000] {
           stroke: theme.$accept-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$accept-color;
         }
@@ -210,7 +210,7 @@
     }
 
     label {
-      color: theme.$accept-color;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -221,14 +221,14 @@
           *[stroke=\#000] {
             stroke: theme.$accept-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accept-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$accept-color-pressed;
@@ -237,7 +237,7 @@
           *[stroke=\#000] {
             stroke: theme.$accept-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accept-color-pressed;
           }
@@ -250,7 +250,7 @@
 :local(.cancel) {
   :local(.icon-container) {
     background-color: theme.$cancel-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$cancel-color-hover;
@@ -269,7 +269,7 @@
         *[stroke=\#000] {
           stroke: theme.$cancel-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$cancel-color;
         }
@@ -277,7 +277,7 @@
     }
 
     label {
-      color: theme.$cancel-color;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -288,14 +288,14 @@
           *[stroke=\#000] {
             stroke: theme.$cancel-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$cancel-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$cancel-color-pressed;
@@ -304,7 +304,7 @@
           *[stroke=\#000] {
             stroke: theme.$cancel-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$cancel-color-pressed;
           }
@@ -318,7 +318,7 @@
   :local(.icon-container) {
     background-color: theme.$accent1-color;
     border-color: theme.$accent1-border-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$accent1-color-hover;
@@ -337,7 +337,7 @@
         *[stroke=\#000] {
           stroke: theme.$accent1-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$accent1-color;
         }
@@ -345,7 +345,7 @@
     }
 
     label {
-      color: theme.$toolbar-label-accent1;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -356,14 +356,14 @@
           *[stroke=\#000] {
             stroke: theme.$accent1-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent1-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$accent1-color-pressed;
@@ -372,7 +372,7 @@
           *[stroke=\#000] {
             stroke: theme.$accent1-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent1-color-pressed;
           }
@@ -386,7 +386,7 @@
   :local(.icon-container) {
     background-color: theme.$accent2-color;
     border-color: theme.$accent2-border-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$accent2-color-hover;
@@ -405,7 +405,7 @@
         *[stroke=\#000] {
           stroke: theme.$accent2-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$accent2-color;
         }
@@ -413,7 +413,7 @@
     }
 
     label {
-      color: theme.$toolbar-label-accent2;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -424,14 +424,14 @@
           *[stroke=\#000] {
             stroke: theme.$accent2-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent2-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$accent2-color-pressed;
@@ -440,7 +440,7 @@
           *[stroke=\#000] {
             stroke: theme.$accent2-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent2-color-pressed;
           }
@@ -454,7 +454,7 @@
   :local(.icon-container) {
     background-color: theme.$accent3-color;
     border-color: theme.$accent3-border-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$accent3-color-hover;
@@ -473,7 +473,7 @@
         *[stroke=\#000] {
           stroke: theme.$accent3-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$accent3-color;
         }
@@ -481,7 +481,7 @@
     }
 
     label {
-      color: theme.$toolbar-label-accent3;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -492,14 +492,14 @@
           *[stroke=\#000] {
             stroke: theme.$accent3-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent3-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$accent3-color-pressed;
@@ -508,7 +508,7 @@
           *[stroke=\#000] {
             stroke: theme.$accent3-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent3-color-pressed;
           }
@@ -541,7 +541,7 @@
         *[stroke=\#000] {
           stroke: theme.$accent4-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$accent4-color;
         }
@@ -549,7 +549,7 @@
     }
 
     label {
-      color: theme.$toolbar-label-accent4;
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -560,14 +560,14 @@
           *[stroke=\#000] {
             stroke: theme.$accent4-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent4-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$accent4-color-pressed;
@@ -576,7 +576,7 @@
           *[stroke=\#000] {
             stroke: theme.$accent4-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent4-color-pressed;
           }
@@ -590,7 +590,7 @@
   :local(.icon-container) {
     background-color: theme.$accent5-color;
     border-color: theme.$accent5-border-color;
-  }  
+  }
 
   &:hover :local(.icon-container) {
     background-color: theme.$accent5-color-hover;
@@ -609,7 +609,7 @@
         *[stroke=\#000] {
           stroke: theme.$accent5-color;
         }
-    
+
         *[fill=\#000] {
           fill: theme.$accent5-color;
         }
@@ -617,7 +617,7 @@
     }
 
     label {
-      color: theme.$toolbar-label-accent5;   
+      color: theme.$text4-color;
     }
 
     &:hover {
@@ -628,14 +628,14 @@
           *[stroke=\#000] {
             stroke: theme.$accent5-color-hover;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent5-color-hover;
           }
         }
       }
     }
-  
+
     &:active {
       :local(.icon-container) {
         border-color: theme.$accent5-color-pressed;
@@ -643,7 +643,7 @@
           *[stroke=\#000] {
             stroke: theme.$accent5-color-pressed;
           }
-      
+
           *[fill=\#000] {
             fill: theme.$accent5-color-pressed;
           }
@@ -682,9 +682,10 @@
   :local(.icon-container) {
     width: 48px;
     border-radius: 0px;
-    border-top-left-radius: 9999px;
-    border-bottom-left-radius: 9999px;
-  } 
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-right-width: 0;
+  }
 }
 
 :local(.middle) {
@@ -697,7 +698,7 @@
   :local(.icon-container) {
     width: 48px;
     border-radius: 0px;
-    border-top-right-radius: 9999px;
-    border-bottom-right-radius: 9999px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
   }
 }

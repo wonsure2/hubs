@@ -6,6 +6,10 @@
   padding: 0;
   flex-direction: column;
   align-items: center;
+  background-image: url("../../assets/images/yuanjing/home-bg@2x.png");
+  margin-top: -140px;
+  padding-top: 140px;
+  //min-height: 1500px; // 防抖，但是高度就不对了，比较难修正。
 
   @media (min-width: theme.$breakpoint-lg) {
     align-items: center;
@@ -22,7 +26,7 @@
   justify-content: center;
   padding: 20px;
   width: 150px;
-  
+
   img {
     width: 100%;
     align-self: flex-start;
@@ -59,12 +63,37 @@
 }
 
 :local(.hero-image-container) {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 53.65677045619116%;
 
-  img {
-    @media (min-width: theme.$breakpoint-lg) {
-      border-radius: 16px;
-    }
-  }
+  //img {
+  //  @media (min-width: theme.$breakpoint-lg) {
+  //    border-radius: 16px;
+  //  }
+  //}
+}
+
+// new
+
+:local(.hero-image-container-panel) {
+  position: relative;
+  display: flex;
+  align-items: end;
+  width: 100%;
+  height: 0;
+}
+
+:local(.hero-image-container-panel-desc) {
+  padding: 0 10% 6% 10%;
+  color: #F9F9F9;
+}
+
+:local(.hero-image-container-panel-buttons) {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3% 3% 0;
 }
 
 :local(.app-info) {
@@ -77,7 +106,7 @@
   & > * {
     margin-bottom: 20px;
   }
-  
+
   @media (min-width: theme.$breakpoint-lg) {
     margin-bottom: 0;
     margin-left: 16px;
@@ -123,7 +152,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
-  
+
   & > * {
     margin-bottom: 24px;
 
@@ -142,7 +171,7 @@
       }
     }
   }
-  
+
   img {
     width: 100%;
     border-radius: 12px;
@@ -150,20 +179,24 @@
 }
 
 :local(.rooms-container) {
-  margin-top: 120px !important;
+  margin-top: 60px !important;
   display: flex;
   flex-direction: column;
 }
 
 :local(.rooms-heading) {
-  margin-left: 40px;
+  //margin-left: 40px;
   font-size: 24px;
   margin-bottom: 16px;
+  color: #f9f9f9;
 }
- 
+
 :local(.rooms) {
-  background-color: theme.$background2-color;
-  border-radius: 16px;
+  //background-color: theme.$background2-color;
+  //border-radius: 16px;
+  background-color: transparent;
+  padding: 0!important;
+  margin: 0 -16px;
 }
 
 :local(.row) {

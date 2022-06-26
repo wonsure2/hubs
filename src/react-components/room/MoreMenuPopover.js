@@ -112,6 +112,7 @@ export function MoreMenuPopoverButton({ menu }) {
           selected={popoverVisible}
           onClick={togglePopover}
           label={title}
+          darkTextColor
         />
       )}
     </Popover>

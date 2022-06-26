@@ -30,34 +30,34 @@ const PRIVACY_POLICY_LINKS = {
 };
 
 const DEFAULT_FACETS = {
-  sketchfab: [
-    { text: "Featured", params: { filter: "featured" } },
-    { text: "Animals", params: { filter: "animals-pets" } },
-    { text: "Architecture", params: { filter: "architecture" } },
-    { text: "Art", params: { filter: "art-abstract" } },
-    { text: "Vehicles", params: { filter: "cars-vehicles" } },
-    { text: "Characters", params: { filter: "characters-creatures" } },
-    { text: "Culture", params: { filter: "cultural-heritage-history" } },
-    { text: "Gadgets", params: { filter: "electronics-gadgets" } },
-    { text: "Fashion", params: { filter: "fashion-style" } },
-    { text: "Food", params: { filter: "food-drink" } },
-    { text: "Furniture", params: { filter: "furniture-home" } },
-    { text: "Music", params: { filter: "music" } },
-    { text: "Nature", params: { filter: "nature-plants" } },
-    { text: "News", params: { filter: "news-politics" } },
-    { text: "People", params: { filter: "people" } },
-    { text: "Places", params: { filter: "places-travel" } },
-    { text: "Science", params: { filter: "science-technology" } },
-    { text: "Sports", params: { filter: "sports-fitness" } },
-    { text: "Weapons", params: { filter: "weapons-military" } }
-  ],
+  // sketchfab: [
+  //   { text: "Featured", params: { filter: "featured" } },
+  //   { text: "Animals", params: { filter: "animals-pets" } },
+  //   { text: "Architecture", params: { filter: "architecture" } },
+  //   { text: "Art", params: { filter: "art-abstract" } },
+  //   { text: "Vehicles", params: { filter: "cars-vehicles" } },
+  //   { text: "Characters", params: { filter: "characters-creatures" } },
+  //   { text: "Culture", params: { filter: "cultural-heritage-history" } },
+  //   { text: "Gadgets", params: { filter: "electronics-gadgets" } },
+  //   { text: "Fashion", params: { filter: "fashion-style" } },
+  //   { text: "Food", params: { filter: "food-drink" } },
+  //   { text: "Furniture", params: { filter: "furniture-home" } },
+  //   { text: "Music", params: { filter: "music" } },
+  //   { text: "Nature", params: { filter: "nature-plants" } },
+  //   { text: "News", params: { filter: "news-politics" } },
+  //   { text: "People", params: { filter: "people" } },
+  //   { text: "Places", params: { filter: "places-travel" } },
+  //   { text: "Science", params: { filter: "science-technology" } },
+  //   { text: "Sports", params: { filter: "sports-fitness" } },
+  //   { text: "Weapons", params: { filter: "weapons-military" } }
+  // ],
   avatars: [
-    { text: "Featured", params: { filter: "featured" } },
-    { text: "My Avatars", params: { filter: "my-avatars" } },
-    { text: "Newest", params: { filter: "" } }
+    { text: "全部", params: { filter: "featured" } },
+    { text: "我的头像", params: { filter: "my-avatars" } },
+    // { text: "Newest", params: { filter: "" } }
   ],
-  favorites: [],
-  scenes: [{ text: "Featured", params: { filter: "featured" } }, { text: "My Scenes", params: { filter: "my-scenes" } }]
+  // favorites: [],
+  scenes: [{ text: "全部", params: { filter: "featured" } }, { text: "我的场景", params: { filter: "my-scenes" } }]
 };
 
 const poweredByMessages = defineMessages({
@@ -390,8 +390,8 @@ class MediaBrowserContainer extends Component {
     if (!hideSearch && urlSource !== "scenes" && urlSource !== "avatars" && urlSource !== "favorites") {
       searchDescription = (
         <>
-          {poweredByMessages[urlSource] ? intl.formatMessage(poweredByMessages[urlSource]) : ""}
-          {poweredByMessages[urlSource] && PRIVACY_POLICY_LINKS[urlSource] ? " | " : ""}
+          {/*{poweredByMessages[urlSource] ? intl.formatMessage(poweredByMessages[urlSource]) : ""}*/}
+          {/*{poweredByMessages[urlSource] && PRIVACY_POLICY_LINKS[urlSource] ? " | " : ""}*/}
           {PRIVACY_POLICY_LINKS[urlSource] && (
             <a href={PRIVACY_POLICY_LINKS[urlSource]} target="_blank" rel="noreferrer noopener">
               <FormattedMessage id="media-browser.privacy_policy" defaultMessage="Privacy Policy" />
@@ -402,27 +402,27 @@ class MediaBrowserContainer extends Component {
     } else if (urlSource === "scenes") {
       searchDescription = (
         <>
-          {configs.feature("enable_spoke") && (
-            <>
-              {intl.formatMessage(poweredByMessages.scenes, {
-                editorName: (
-                  <a href="/spoke" target="_blank" rel="noreferrer noopener">
-                    {configs.translation("editor-name")}
-                  </a>
-                )
-              })}
-            </>
-          )}
-          {configs.feature("enable_spoke") && configs.feature("show_issue_report_link") && " | "}
-          {configs.feature("show_issue_report_link") && (
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={configs.link("issue_report", "https://hubs.mozilla.com/docs/help.html")}
-            >
-              <FormattedMessage id="media-browser.report-issue" defaultMessage="Report Issue" />
-            </a>
-          )}
+          {/*{configs.feature("enable_spoke") && (*/}
+          {/*  <>*/}
+          {/*    {intl.formatMessage(poweredByMessages.scenes, {*/}
+          {/*      editorName: (*/}
+          {/*        <a href="/spoke" target="_blank" rel="noreferrer noopener">*/}
+          {/*          {configs.translation("editor-name")}*/}
+          {/*        </a>*/}
+          {/*      )*/}
+          {/*    })}*/}
+          {/*  </>*/}
+          {/*)}*/}
+          {/*{configs.feature("enable_spoke") && configs.feature("show_issue_report_link") && " | "}*/}
+          {/*{configs.feature("show_issue_report_link") && (*/}
+          {/*  <a*/}
+          {/*    target="_blank"*/}
+          {/*    rel="noopener noreferrer"*/}
+          {/*    href={configs.link("issue_report", "https://hubs.mozilla.com/docs/help.html")}*/}
+          {/*  >*/}
+          {/*    <FormattedMessage id="media-browser.report-issue" defaultMessage="Report Issue" />*/}
+          {/*  </a>*/}
+          {/*)}*/}
         </>
       );
     }
@@ -463,12 +463,13 @@ class MediaBrowserContainer extends Component {
         }
         searchDescription={searchDescription}
         headerRight={
-          showCustomOption && (
-            <IconButton lg onClick={() => handleCustomClicked(urlSource)}>
-              {["scenes", "avatars"].includes(urlSource) ? <LinkIcon /> : <UploadIcon />}
-              <p>{intl.formatMessage(customObjectMessages[customObjectType])}</p>
-            </IconButton>
-          )
+        null
+          // showCustomOption && (
+          //   <IconButton lg onClick={() => handleCustomClicked(urlSource)}>
+          //     {["scenes", "avatars"].includes(urlSource) ? <LinkIcon /> : <UploadIcon />}
+          //     <p>{intl.formatMessage(customObjectMessages[customObjectType])}</p>
+          //   </IconButton>
+          // )
         }
         hasNext={hasNext}
         hasPrevious={hasPrevious}
@@ -485,30 +486,30 @@ class MediaBrowserContainer extends Component {
         entries.length > 0 ||
         !showEmptyStringOnNoResult ? (
           <>
-            {urlSource === "avatars" && (
-              <CreateTile
-                type="avatar"
-                onClick={this.onCreateAvatar}
-                label={<FormattedMessage id="media-browser.create-avatar" defaultMessage="Create Avatar" />}
-              />
-            )}
-            {urlSource === "scenes" &&
-              configs.feature("enable_spoke") && (
-                <CreateTile
-                  as="a"
-                  href="/spoke/new"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  type="scene"
-                  label={
-                    <FormattedMessage
-                      id="media-browser.create-scene"
-                      defaultMessage="Create Scene with {editorName}"
-                      values={{ editorName: configs.translation("editor-name") }}
-                    />
-                  }
-                />
-              )}
+            {/*{urlSource === "avatars" && (*/}
+            {/*  <CreateTile*/}
+            {/*    type="avatar"*/}
+            {/*    onClick={this.onCreateAvatar}*/}
+            {/*    label={<FormattedMessage id="media-browser.create-avatar" defaultMessage="Create Avatar" />}*/}
+            {/*  />*/}
+            {/*)}*/}
+            {/*{urlSource === "scenes" &&*/}
+            {/*  configs.feature("enable_spoke") && (*/}
+            {/*    <CreateTile*/}
+            {/*      as="a"*/}
+            {/*      href="/spoke/new"*/}
+            {/*      rel="noopener noreferrer"*/}
+            {/*      target="_blank"*/}
+            {/*      type="scene"*/}
+            {/*      label={*/}
+            {/*        <FormattedMessage*/}
+            {/*          id="media-browser.create-scene"*/}
+            {/*          defaultMessage="Create Scene with {editorName}"*/}
+            {/*          values={{ editorName: configs.translation("editor-name") }}*/}
+            {/*        />*/}
+            {/*      }*/}
+            {/*    />*/}
+            {/*  )}*/}
             {entries.map((entry, idx) => {
               const isAvatar = entry.type === "avatar" || entry.type === "avatar_listing";
               const isScene = entry.type === "scene" || entry.type === "scene_listing";

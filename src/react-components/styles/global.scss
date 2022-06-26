@@ -24,7 +24,7 @@
   --text5-color-hover: var(--text5-color);
   --text5-color-pressed: var(--text5-color);
   --text-inverted-color: #{theme.$white};
- 
+
 
   --link-color: #{theme.$blue};
   --link-color-hover: #{theme.$blue-hover};
@@ -68,9 +68,17 @@
   --accent6-color-hover: #{theme.$black-hover};
   --accent6-color-pressed: #{theme.$black-pressed};
 
+  --accent7-color: #{theme.$gold};
+  --accent7-color-hover: #{theme.$gold-hover};
+  --accent7-color-pressed: #{theme.$gold-pressed};
+
+  --accent8-color: #{theme.$cyan};
+  --accent8-color-hover: #{theme.$cyan-hover};
+  --accent8-color-pressed: #{theme.$cyan-pressed};
+
   --primary-color: #{theme.$blue};
-  --primary-color-hover: #{theme.$blue-hover};
-  --primary-color-pressed: #{theme.$blue-pressed};
+  --primary-color-hover: #{theme.$blue-hover}; // blue
+  --primary-color-pressed: #{theme.$blue-pressed}; // blue
 
   --secondary-color: #{theme.$lightgrey};
   --secondary-color-hover: #{theme.$lightgrey-hover};
@@ -110,8 +118,8 @@
   --input-bg-color: var(--background1-color);
   --input-icon-color: var(--text2-color);
   --input-border-color: var(--border3-color);
-  --input-border-color-hover: var(--primary-color-hover);
-  --input-outline-color: var(--primary-color);
+  --input-border-color-hover: var(--accept-color-hover);
+  --input-outline-color: var(--accept-color);
 
   --list-bg-color-hover: var(--basic-color-hover);
   --list-bg-color-pressed: var(--basic-color-pressed);
@@ -127,11 +135,11 @@
   --button-bg-color-pressed: var(--basic-color-pressed);
 
   --active-text-color: var(--text5-color);
-  --active-color: var(--primary-color);
-  --active-color-hover: var(--primary-color-hover);
-  --active-color-pressed: var(--primary-color-pressed);
+  --active-color: var(--accept-color);
+  --active-color-hover: var(--accept-color-hover);
+  --active-color-pressed: var(--accept-color-pressed);
 
-  --chat-bubble-bg-color-sent: var(--accent4-color);
+  --chat-bubble-bg-color-sent: var(--accent3-color);
   --chat-bubble-text-color-sent: var(--text5-color);
   --chat-bubble-link-color-sent-hover: var(--basic-color-hover);
   --chat-bubble-link-color-sent-pressed: var(--basic-color-pressed);
@@ -162,7 +170,7 @@
   --overlay-outline-color: #{theme.$white};
 
   --toolbar-icon-color: var(--text5-color);
-  --toolbar-icon-selected-bg: var(--transparent); 
+  --toolbar-icon-selected-bg: var(--transparent);
   --toolbar-basic-icon-color: var(--text1-color);
   --toolbar-basic-selected-icon-color: var(--text1-color);
   --toolbar-basic-color: var(--secondary-color);

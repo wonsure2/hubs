@@ -2,7 +2,10 @@
 
 header {
   display: block;
-  
+
+  @media(max-width: theme.$breakpoint-lg) {
+    display: none;
+  }
 
   @media(min-width: theme.$breakpoint-lg) {
     padding: 0;
@@ -76,8 +79,9 @@ header {
 
 :local(.home-link) {
   display: inline-block;
-  width: 124px;
-  height: 83px;
+  width: 128px;
+  height: 59px;
+  margin-left: 0;;
   @media(min-width: theme.$breakpoint-lg) {
    img {
     height: 32px;
@@ -91,7 +95,7 @@ header {
   padding-top: 20px;
   font-size: theme.$font-size-md;
   font-weight: theme.$font-weight-bold;
-  
+
   a {
     margin-left: 8px;
     color: theme.$link-color;

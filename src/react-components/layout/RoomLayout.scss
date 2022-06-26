@@ -1,14 +1,16 @@
 @use "../styles/theme.scss";
 
 :local(.room-layout) {
+  //background-image: url("../../assets/images/yuanjing/loading/bg@2x.png");
+  //background-size: cover;
   display: grid;
   width: 100%;
   height: 100%;
   grid-template-columns:
     [main] auto
     [sidebar] minmax(0, min-content);
-  
-  grid-template-rows: 
+
+  grid-template-rows:
     [viewport] auto
     [toolbar] min-content;
 

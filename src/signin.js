@@ -11,6 +11,7 @@ import "./react-components/styles/global.scss";
 import "./assets/stylesheets/globals.scss";
 import { Center } from "./react-components/layout/Center";
 import { ThemeProvider } from "./react-components/styles/theme";
+import styles from "./react-components/home/HomePage.scss";
 
 registerTelemetry("/signin", "Hubs Sign In Page");
 
@@ -22,7 +23,7 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <PageContainer>
+          <PageContainer className={styles.homePage}>
             <Center>
               <SignInModalContainer />
             </Center>

@@ -6,11 +6,11 @@ import { getAppLogo } from "../../utils/get-app-logo";
 import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
 import { isHmc } from "../../utils/isHmc";
 
-export function AppLogo({ className, forceConfigurableLogo }) {
-  if (isHmc() && !forceConfigurableLogo) {
+export function AppLogo({ className, forceConfigurableLogo, style }) {
+  if (false && isHmc() && !forceConfigurableLogo) {
     return <HmcLogo className="hmc-logo" />;
   } else {
-    return <img className={className} alt={configs.translation("app-name")} src={getAppLogo()} />;
+    return <img style={style ?? {}} className={className} alt={configs.translation("app-name")} src={getAppLogo()} />;
   }
 }
 

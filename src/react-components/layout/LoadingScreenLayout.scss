@@ -11,7 +11,9 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background: theme.$loading-screen-background;
+  //background: theme.$loading-screen-background;
+  background-image: url("../../assets/images/yuanjing/home-bg@2x.png");
+  background-size: cover;
 
   font-size: theme.$font-size-sm;
 

@@ -71,3 +71,15 @@ Mozilla and Hubs believe that privacy is fundamental to a healthy internet. Read
 ## License
 
 Hubs is licensed with the [Mozilla Public License 2.0](./LICENSE)
+
+
+## 如何更新 Icon？
+
+Icon 均为 SVG 图片，存放在 `src/react-components/icons/` 目录下，更改步骤如下：
+1. 找到你想要替换的图标，查看 svg 代码，查看宽度，例如 `<svg width="20"` 代表宽度为 20。
+2. 去 https://www.iconfont.cn/ 输入关键词，搜索你想要的图标。
+3. 鼠标悬停在 Icon 上后，点击第三个选项（下载），将颜色改为 `#000000`，宽度改为第一步中 SVG 的宽度。
+4. 点击"复制 SVG 代码"。
+5. 找到想要替换的图标，打开文件，粘贴来覆盖原文件内容。
+6. 在 `<svg ` 后面添加 `fill="none"`，保证添加后为 `<svg fill="none" width=...`。
+7. 完成，刷新页面查看即可。

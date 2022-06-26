@@ -61,19 +61,19 @@ export function Page({
         />
         {children}
       </main>
-      <Footer
-        hidePoweredBy={hidePoweredBy}
-        showWhatsNewLink={showWhatsNewLink}
-        showTerms={showTerms}
-        termsUrl={termsUrl}
-        showPrivacy={showPrivacy}
-        privacyUrl={privacyUrl}
-        showCompanyLogo={showCompanyLogo}
-        companyLogoUrl={companyLogoUrl}
-        showDiscordBotLink={showDiscordBotLink}
-        appName={appName}
-        isHmc={isHmc}
-      />
+      {/*<Footer*/}
+      {/*  hidePoweredBy={hidePoweredBy}*/}
+      {/*  showWhatsNewLink={showWhatsNewLink}*/}
+      {/*  showTerms={showTerms}*/}
+      {/*  termsUrl={termsUrl}*/}
+      {/*  showPrivacy={showPrivacy}*/}
+      {/*  privacyUrl={privacyUrl}*/}
+      {/*  showCompanyLogo={showCompanyLogo}*/}
+      {/*  companyLogoUrl={companyLogoUrl}*/}
+      {/*  showDiscordBotLink={showDiscordBotLink}*/}
+      {/*  appName={appName}*/}
+      {/*  isHmc={isHmc}*/}
+      {/*/>*/}
     </>
   );
 }

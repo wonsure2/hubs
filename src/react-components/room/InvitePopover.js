@@ -26,7 +26,7 @@ function InvitePopoverContent({ url, embed, inviteRequired, fetchingInvite, invi
           <CopyableTextInputField
             label={<FormattedMessage id="invite-popover.embed-code" defaultMessage="Embed Code" />}
             value={embed}
-            buttonPreset="accent5"
+            buttonPreset="accent3"
           />
         </>
       )}
@@ -88,6 +88,7 @@ export function InvitePopoverButton({
           onClick={togglePopover}
           label={title}
           {...rest}
+          darkTextColor={true}
         />
       )}
     </Popover>

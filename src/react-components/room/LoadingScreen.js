@@ -10,13 +10,13 @@ export function LoadingScreen({ message, infoMessages }) {
       center={
         <>
           <Spinner />
-          <p>{message}</p>
+          <p style={{ color: "#f9f9f9" }}>{message}</p>
         </>
       }
       bottom={
         <>
-          <h3>{infoMessage.heading}</h3>
-          <p>{infoMessage.message}</p>
+          {/*<h3>{infoMessage.heading}</h3>*/}
+          {/*<p>{infoMessage.message}</p>*/}
         </>
       }
     />

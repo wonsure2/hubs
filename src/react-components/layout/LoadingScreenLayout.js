@@ -7,8 +7,8 @@ import { AppLogo } from "../misc/AppLogo";
 export function LoadingScreenLayout({ center, bottom }) {
   return (
     <div className={styles.loadingScreenLayout}>
-      <Column center padding gap="lg" className={styles.center}>
-        <AppLogo className={styles.logo} />
+      <Column center padding gap="lg" className={styles.center} style={{ color: "#f9f9f9" }}>
+        <AppLogo className={styles.logo} style={{ width: 200, marginTop: -50 }} />
         {center}
       </Column>
       {bottom && (
