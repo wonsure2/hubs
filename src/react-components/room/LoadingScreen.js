@@ -15,8 +15,8 @@ export function LoadingScreen({ message, infoMessages }) {
       }
       bottom={
         <>
-          {/*<h3>{infoMessage.heading}</h3>*/}
-          {/*<p>{infoMessage.message}</p>*/}
+          <h3 style={{ color: "#f9f9f9" }}>{infoMessage.heading}</h3>
+          <p style={{ color: "#f9f9f9" }}>{infoMessage.message}</p>
         </>
       }
     />

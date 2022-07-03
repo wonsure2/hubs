@@ -74,7 +74,7 @@ function getMockRooms() {
       type: "room",
       url: "https://dev.reticulum.io/aPZKXEF/elaborate-vibrant-world",
       user_data: null
-    }, ...new Array(3).fill({
+    }, ...new Array(10).fill({
       description: "房间描述3房间描述3房间描述3",
       id: "aPZKXEH",
       images: {
@@ -99,8 +99,8 @@ export function HomePage() {
   const auth = useContext(AuthContext);
   const intl = useIntl();
 
-  const [showMorePublicRooms, setShowMorePublicRooms] = useState(false);
-  const [showMoreFavRooms, setShowMoreFavRooms] = useState(false);
+  const [showMorePublicRooms, setShowMorePublicRooms] = useState(6);
+  const [showMoreFavRooms, setShowMoreFavRooms] = useState(6);
 
   const { results: favoriteRooms } = useFavoriteRooms();
   const { results: publicRooms } = usePublicRooms();
@@ -237,7 +237,7 @@ export function HomePage() {
           <Column grow padding className={styles.rooms}>
             <MediaGrid center>
               {sortedPublicRooms.map((room, index) => {
-                if (!showMorePublicRooms && index > 5) {
+                if (index >= showMorePublicRooms) {
                   return null;
                 }
                 return (
@@ -253,20 +253,19 @@ export function HomePage() {
               })}
             </MediaGrid>
           </Column>
-          {!showMorePublicRooms &&
-            sortedPublicRooms.length > 6 && (
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  thin
-                  style={{ width: "100%", maxWidth: 300 }}
-                  onClick={() => {
-                    setShowMorePublicRooms(true);
-                  }}
-                >
-                  <FormattedMessage id="home-page.more-public-rooms" defaultMessage="Load more" />
-                </Button>
-              </div>
-            )}
+          {sortedPublicRooms.length > showMorePublicRooms && (
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                thin
+                style={{ width: "100%", maxWidth: 300 }}
+                onClick={() => {
+                  setShowMorePublicRooms(value => value + 6);
+                }}
+              >
+                <FormattedMessage id="home-page.more-public-rooms" defaultMessage="Load more" />
+              </Button>
+            </div>
+          )}
         </Container>
       )}
       {sortedFavoriteRooms.length > 0 && (
@@ -277,7 +276,7 @@ export function HomePage() {
           <Column grow padding className={styles.rooms}>
             <MediaGrid center>
               {sortedFavoriteRooms.map((room, index) => {
-                if (!showMoreFavRooms && index > 5) {
+                if (index >= showMoreFavRooms) {
                   return null;
                 }
                 return (
@@ -293,20 +292,19 @@ export function HomePage() {
               })}
             </MediaGrid>
           </Column>
-          {!showMoreFavRooms &&
-            sortedFavoriteRooms.length > 6 && (
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <Button
-                  thin
-                  style={{ width: "100%", maxWidth: 300 }}
-                  onClick={() => {
-                    setShowMoreFavRooms(true);
-                  }}
-                >
-                  <FormattedMessage id="home-page.more-fav-rooms" defaultMessage="Load more" />
-                </Button>
-              </div>
-            )}
+          {sortedFavoriteRooms.length > showMoreFavRooms && (
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                thin
+                style={{ width: "100%", maxWidth: 300 }}
+                onClick={() => {
+                  setShowMoreFavRooms(value => value + 6);
+                }}
+              >
+                <FormattedMessage id="home-page.more-fav-rooms" defaultMessage="Load more" />
+              </Button>
+            </div>
+          )}
         </Container>
       )}
       {/*<Container>*/}
