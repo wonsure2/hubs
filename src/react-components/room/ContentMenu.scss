@@ -1,7 +1,8 @@
 @use "../styles/theme.scss";
 
 :local(.content-menu) {
-  position: absolute;
+  //position: absolute;
+  position: fixed;
   top: 8px;
   right: 8px;
   display: flex;

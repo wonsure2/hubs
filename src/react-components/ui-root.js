@@ -1532,6 +1532,12 @@ class UIRoot extends Component {
                 }
                 toolbarCenter={
                   <>
+                    <InvitePopoverContainer
+                      entered={entered}
+                      hub={this.props.hub}
+                      hubChannel={this.props.hubChannel}
+                      scene={this.props.scene}
+                    />
                     {watching && (
                       <>
                         <ToolbarButton
@@ -1581,6 +1587,31 @@ class UIRoot extends Component {
                           onClick={() => exit2DInterstitialAndEnterVR(true)}
                         />
                       )}
+                    <>
+                      {entered &&
+                        isMobileVR && (
+                          <ToolbarButton
+                            icon={<VRIcon />}
+                            preset="accept"
+                            label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
+                            onClick={() => exit2DInterstitialAndEnterVR(true)}
+                          />
+                        )}
+                      {entered && (
+                        <ToolbarButton
+                          icon={<LeaveIcon />}
+                          label={<FormattedMessage id="toolbar.leave-room-button" defaultMessage="Leave" />}
+                          preset="cancel"
+                          onClick={() => {
+                            this.showNonHistoriedDialog(LeaveRoomModal, {
+                              destinationUrl: "/",
+                              reason: LeaveReason.leaveRoom
+                            });
+                          }}
+                        />
+                      )}
+                      <MoreMenuPopoverButton menu={moreMenu} />
+                    </>
                   </>
                 }
                 toolbarRight={

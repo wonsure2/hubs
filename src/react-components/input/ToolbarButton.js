@@ -53,20 +53,26 @@ export const ToolbarButton = forwardRef(
         {...rest}
       >
         <div className={classNames(styles.iconContainer, iconContainerClassName)} aria-hidden="true">
-          <span style={centerIcon ? null : { marginTop: -8 }}>{icon}</span>
+          {icon}
           {statusColor && <div className={classNames(styles.statusIndicator, styles["status-" + statusColor])} />}
           {children}
         </div>
-        {label && (
-          <label
-            style={{
-              ...{ fontSize: 12, transform: "scale(0.83)", marginTop: -16 },
-              ...(darkTextColor || selected ? null : { color: "#F9F9F9" })
-            }}
-          >
-            {label}
-          </label>
-        )}
+        {label && <label>{label}</label>}
+        {/*<div className={classNames(styles.iconContainer, iconContainerClassName)} aria-hidden="true">*/}
+        {/*  <span style={centerIcon ? null : { marginTop: -8 }}>{icon}</span>*/}
+        {/*  {statusColor && <div className={classNames(styles.statusIndicator, styles["status-" + statusColor])} />}*/}
+        {/*  {children}*/}
+        {/*</div>*/}
+        {/*{label && (*/}
+        {/*  <label*/}
+        {/*    style={{*/}
+        {/*      ...{ fontSize: 12, transform: "scale(0.83)", marginTop: -16 },*/}
+        {/*      ...(darkTextColor || selected ? null : { color: "#F9F9F9" })*/}
+        {/*    }}*/}
+        {/*  >*/}
+        {/*    {label}*/}
+        {/*  </label>*/}
+        {/*)}*/}
       </button>
     );
   }

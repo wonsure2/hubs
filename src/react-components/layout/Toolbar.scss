@@ -1,11 +1,11 @@
 @use '../styles/theme';
 
 :local(.toolbar) {
-  height: 73px;
+  //height: 73px;
   display: flex;
   padding: 12px;
-  background-color: theme.$background1-color;
-  border-top: 1px solid theme.$border1-color;
+  //background-color: theme.$background1-color;
+  //border-top: 1px solid theme.$border1-color;
 
   @media (min-width: theme.$breakpoint-lg) {
     padding: 12px 24px;
@@ -29,4 +29,12 @@
       margin-right: 0px;
     }
   }
+}
+
+:local(.center-content-inner) {
+  display: flex;
+  align-items: center;
+  padding: 10px 100px;
+  background-color: theme.$background1-color;
+  border-radius: 9999px;
 }
