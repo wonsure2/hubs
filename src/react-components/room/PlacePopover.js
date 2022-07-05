@@ -5,6 +5,7 @@ import { Popover } from "../popover/Popover";
 import { ToolbarButton } from "../input/ToolbarButton";
 import { ReactComponent as ObjectIcon } from "../icons/Object.svg";
 import { defineMessage, useIntl } from "react-intl";
+import imageIcon from "../../assets/images/yuanjing/button_icons/room/init/工具@2x.png";
 
 const placePopoverTitle = defineMessage({
   id: "place-popover.title",
@@ -31,12 +32,13 @@ export function PlacePopoverButton({ items }) {
     >
       {({ togglePopover, popoverVisible, triggerRef }) => (
         <ToolbarButton
+          imageIcon={imageIcon}
           ref={triggerRef}
           icon={<ObjectIcon />}
           selected={popoverVisible}
           onClick={togglePopover}
           label={title}
-          preset="accent4"
+          // preset="accent4"
         />
       )}
     </Popover>

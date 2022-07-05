@@ -11,6 +11,7 @@ import { Row } from "../layout/Row";
 import { HandRaisedButton } from "./ReactionButton";
 import styles from "./ReactionPopover.scss";
 import { Button } from "../input/Button";
+import imageIcon from "../../assets/images/yuanjing/button_icons/room/init/表情@2x.png";
 
 const reactionPopoverTitle = defineMessage({
   id: "reaction-popover.title",
@@ -106,6 +107,7 @@ export function ReactionPopoverButton({ items, presence, onToggleHandRaised }) {
       {({ togglePopover, popoverVisible, triggerRef }) => (
         <ToolbarButton
           ref={triggerRef}
+          imageIcon={imageIcon}
           icon={
             presence.hand_raised ? (
               <HandRaisedIcon width="32px" height="32px" style={{ marginLeft: "5px" }} />
@@ -124,7 +126,7 @@ export function ReactionPopoverButton({ items, presence, onToggleHandRaised }) {
             }
           }}
           label={title}
-          preset="accent4"
+          // preset="accent4"
         />
       )}
     </Popover>

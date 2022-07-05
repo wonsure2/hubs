@@ -5,6 +5,7 @@ import { Popover } from "../popover/Popover";
 import { ToolbarButton } from "../input/ToolbarButton";
 import { ReactComponent as ShareIcon } from "../icons/Share.svg";
 import { defineMessage, useIntl } from "react-intl";
+import shareImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/Avatar@2x.png";
 
 const sharePopoverTitle = defineMessage({
   id: "share-popover.title",
@@ -30,6 +31,7 @@ export function SharePopoverButton({ items }) {
     const Icon = item.icon;
     return (
       <ToolbarButton
+        imageIcon={shareImageIcon}
         icon={<Icon />}
         onClick={() => {
           if (item.onSelect) {
@@ -37,7 +39,7 @@ export function SharePopoverButton({ items }) {
           }
         }}
         label={title}
-        preset="accent4"
+        // preset="accent4"
         statusColor={activeItem && "recording"}
       />
     );
@@ -53,12 +55,13 @@ export function SharePopoverButton({ items }) {
     >
       {({ togglePopover, popoverVisible, triggerRef }) => (
         <ToolbarButton
+          imageIcon={shareImageIcon}
           ref={triggerRef}
           icon={<ShareIcon />}
           selected={popoverVisible}
           onClick={togglePopover}
           label={title}
-          preset="accent4"
+          // preset="accent4"
         />
       )}
     </Popover>

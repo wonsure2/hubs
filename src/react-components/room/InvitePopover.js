@@ -8,6 +8,7 @@ import { ReactComponent as InviteIcon } from "../icons/Invite.svg";
 import { Column } from "../layout/Column";
 import { InviteLinkInputField } from "./InviteLinkInputField";
 import { FormattedMessage, defineMessage, useIntl } from "react-intl";
+import inviteImgIcon from '../../assets/images/yuanjing/button_icons/room/init/邀请@2x.png';
 
 function InvitePopoverContent({ url, embed, inviteRequired, fetchingInvite, inviteUrl, revokeInvite }) {
   return (
@@ -82,6 +83,7 @@ export function InvitePopoverButton({
     >
       {({ togglePopover, popoverVisible, triggerRef }) => (
         <ToolbarButton
+          imageIcon={inviteImgIcon}
           ref={triggerRef}
           icon={<InviteIcon />}
           selected={popoverVisible}

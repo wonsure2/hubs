@@ -8,22 +8,118 @@
   --font-family-default: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 
-  --text1-color: #{theme.$black};
-  --text1-color-hover: #{theme.$black-hover};
-  --text1-color-pressed: #{theme.$black-pressed};
-  --text2-color: #{theme.$darkgrey};
-  --text2-color-hover: #{theme.$darkgrey-hover};
-  --text2-color-pressed: #{theme.$darkgrey-pressed};
-  --text3-color: #{theme.$grey};
-  --text3-color-hover: #{theme.$grey-hover};
-  --text3-color-pressed: #{theme.$grey-pressed};
-  --text4-color: #{theme.$darkgrey};
+  //--text1-color: #{theme.$black};
+  //--text1-color-hover: #{theme.$black-hover};
+  //--text1-color-pressed: #{theme.$black-pressed};
+  //--text2-color: #{theme.$darkgrey};
+  //--text2-color-hover: #{theme.$darkgrey-hover};
+  //--text2-color-pressed: #{theme.$darkgrey-pressed};
+  //--text3-color: #{theme.$grey};
+  //--text3-color-hover: #{theme.$grey-hover};
+  //--text3-color-pressed: #{theme.$grey-pressed};
+  //--text4-color: #{theme.$darkgrey};
+  //--text4-color-hover: var(--text4-color);
+  //--text4-color-pressed: var(--text4-color);
+  //--text5-color: #{theme.$white};
+  //--text5-color-hover: var(--text5-color);
+  //--text5-color-pressed: var(--text5-color);
+  //--text-inverted-color: #{theme.$white};
+  //
+  //
+  //--link-color: #{theme.$blue};
+  //--link-color-hover: #{theme.$blue-hover};
+  //--link-color-pressed: #{theme.$blue-pressed};
+  //
+  //--accept-color: #{theme.$green};
+  //--accept-border-color: #{theme.$green};
+  //--accept-color-hover: #{theme.$green-hover};
+  //--accept-color-pressed: #{theme.$green-pressed};
+  //
+  //--cancel-color: #{theme.$red};
+  //--cancel-color-hover: #{theme.$red-hover};
+  //--cancel-color-pressed: #{theme.$red-pressed};
+  //
+  //--accent1-color: #{theme.$red};
+  //--accent1-border-color: var(--accent1-color);
+  //--accent1-color-hover: #{theme.$red-hover};
+  //--accent1-color-pressed: #{theme.$red-pressed};
+  //
+  //--accent2-color: #{theme.$orange};
+  //--accent2-border-color: var(--accent2-color);
+  //--accent2-color-hover: #{theme.$orange-hover};
+  //--accent2-color-pressed: #{theme.$orange-pressed};
+  //
+  //--accent3-color: #{theme.$green};
+  //--accent3-border-color: var(--accent3-color);
+  //--accent3-color-hover: #{theme.$green-hover};
+  //--accent3-color-pressed: #{theme.$green-pressed};
+  //
+  //--accent4-color: #{theme.$blue};
+  //--accent4-border-color: var(--accent4-color);
+  //--accent4-color-hover: #{theme.$blue-hover};
+  //--accent4-color-pressed: #{theme.$blue-pressed};
+  //
+  //--accent5-color: #{theme.$purple};
+  //--accent5-border-color: var(--accent5-color);
+  //--accent5-color-hover: #{theme.$purple-hover};
+  //--accent5-color-pressed: #{theme.$purple-pressed};
+  //
+  //--accent6-color: #{theme.$black};
+  //--accent6-color-hover: #{theme.$black-hover};
+  //--accent6-color-pressed: #{theme.$black-pressed};
+  //
+  //--accent7-color: #{theme.$gold};
+  //--accent7-color-hover: #{theme.$gold-hover};
+  //--accent7-color-pressed: #{theme.$gold-pressed};
+  //
+  //--accent8-color: #{theme.$cyan};
+  //--accent8-color-hover: #{theme.$cyan-hover};
+  //--accent8-color-pressed: #{theme.$cyan-pressed};
+  //
+  //--primary-color: #{theme.$blue};
+  //--primary-color-hover: #{theme.$blue-hover}; // blue
+  //--primary-color-pressed: #{theme.$blue-pressed}; // blue
+  //
+  //--secondary-color: #{theme.$lightgrey};
+  //--secondary-color-hover: #{theme.$lightgrey-hover};
+  //--secondary-color-pressed: #{theme.$lightgrey-pressed};
+  //
+  //--background1-color: #{theme.$white};
+  //--background2-color: #{theme.$recessed-bg};
+  //--background3-color: #{theme.$lightgrey};
+  //--background4-color: #{theme.$grey};
+  //
+  //--loading-screen-background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #EEEEEE 100%);
+  //
+  //--border1-color: #{theme.$lightgrey};
+  //--border2-color: #{theme.$grey};
+  //--border3-color: #{theme.$darkgrey};
+  //
+  //--outline-color: #{theme.$black};
+  //
+  //--shadow-color: rgba(0, 0, 0, 0.2);
+  //
+  //--basic-color: #{theme.$white};
+  //--basic-color-hover: #{theme.$white-hover};
+  //--basic-color-pressed: #{theme.$white-pressed};
+  //--basic-border-color: var(--border1-color);
+
+  --text1-color: #{theme.$white};
+  --text1-color-hover: #{theme.$white-hover};
+  --text1-color-pressed: #{theme.$white-pressed};
+  --text2-color: #{theme.$lightgrey};
+  --text2-color-hover: #{theme.$lightgrey-hover};
+  --text2-color-pressed: #{theme.$lightgrey-pressed};
+  --text3-color: #{theme.$lightgrey};
+  --text3-color-hover: #{theme.$lightgrey-hover};
+  --text3-color-pressed: #{theme.$lightgrey-pressed};
+  --text4-color: #{theme.$lightgrey};
   --text4-color-hover: var(--text4-color);
   --text4-color-pressed: var(--text4-color);
   --text5-color: #{theme.$white};
   --text5-color-hover: var(--text5-color);
   --text5-color-pressed: var(--text5-color);
-  --text-inverted-color: #{theme.$white};
+  --text-inverted-color: #{theme.$black};
 
 
   --link-color: #{theme.$blue};
@@ -84,24 +180,24 @@
   --secondary-color-hover: #{theme.$lightgrey-hover};
   --secondary-color-pressed: #{theme.$lightgrey-pressed};
 
-  --background1-color: #{theme.$white};
-  --background2-color: #{theme.$recessed-bg};
+  --background1-color: rgba(158, 158, 158, .62); // #{theme.$black};
+  --background2-color: #{theme.$darkgrey};
   --background3-color: #{theme.$lightgrey};
-  --background4-color: #{theme.$grey};
+  --background4-color: #F3F4F5;
 
-  --loading-screen-background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #EEEEEE 100%);
+  --loading-screen-background: radial-gradient(50% 50% at 50% 50%, #000 0%, #111 100%);
 
-  --border1-color: #{theme.$lightgrey};
-  --border2-color: #{theme.$grey};
-  --border3-color: #{theme.$darkgrey};
+  --border1-color: #eceaea; // #{theme.$darkgrey};
+  --border2-color: #f3f0f0;
+  --border3-color: #faf9f9;
 
-  --outline-color: #{theme.$black};
+  --outline-color: #{theme.$white};
 
-  --shadow-color: rgba(0, 0, 0, 0.2);
+  --shadow-color: rgba(255, 255, 255, 0.8);
 
-  --basic-color: #{theme.$white};
-  --basic-color-hover: #{theme.$white-hover};
-  --basic-color-pressed: #{theme.$white-pressed};
+  --basic-color: #727272;
+  --basic-color-hover: #{theme.$black-hover};
+  --basic-color-pressed: #{theme.$black-pressed};
   --basic-border-color: var(--border1-color);
 
   --disabled-text-color: var(--text4-color);
@@ -164,10 +260,10 @@
   --status-enabled-color: var(--accept-color);
   --status-disabled-color: var(--cancel-color);
 
-  --overlay-bg-color: rgba(0, 0, 0, 0.5);
+  --overlay-bg-color: rgba(100, 100, 100, 0.5);
   --overlay-text-color: #{theme.$white};
   --overlay-border-color: #{theme.$grey};
-  --overlay-outline-color: #{theme.$white};
+  --overlay-outline-color: #{theme.$lightgrey};
 
   --toolbar-icon-color: var(--text5-color);
   --toolbar-icon-selected-bg: var(--transparent);

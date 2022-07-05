@@ -94,6 +94,16 @@ import { TipContainer, FullscreenTip } from "./room/TipContainer";
 import { SpectatingLabel } from "./room/SpectatingLabel";
 import { SignInMessages } from "./auth/SignInModal";
 import { MediaDevicesEvents } from "../utils/media-devices-utils";
+import leaveImageIcon from '../assets/images/yuanjing/button_icons/room/init/离开@2x.png';
+import moreSignOutImageIcon from '../assets/images/yuanjing/button_icons/more/init/退出登录@2x.png';
+import moreSignInImageIcon from '../assets/images/yuanjing/button_icons/more/init/登陆账号@2x.png';
+import moreRoomSettingsImageIcon from '../assets/images/yuanjing/button_icons/more/init/空间设置@2x.png';
+import moreChangeNameImageIcon from '../assets/images/yuanjing/button_icons/more/init/更换Avatar@2x.png';
+import moreStarImageIcon from '../assets/images/yuanjing/button_icons/more/init/收藏空间@2x.png';
+import moreSettingsImageIcon from '../assets/images/yuanjing/button_icons/more/init/偏好设置@2x.png';
+import moreCreateRoomImageIcon from '../assets/images/yuanjing/button_icons/more/init/新建空间@2x.png';
+import moreLeaveRoomImageIcon from '../assets/images/yuanjing/button_icons/room/init/离开@2x.png';
+import moreCloseRoomImageIcon from '../assets/images/yuanjing/button_icons/more/init/离开该空间@2x.png';
 
 const avatarEditorDebug = qsTruthy("avatarEditorDebug");
 
@@ -1109,6 +1119,7 @@ class UIRoot extends Component {
             ? {
                 id: "sign-out",
                 label: <FormattedMessage id="more-menu.sign-out" defaultMessage="Sign Out" />,
+                imageIcon: moreSignOutImageIcon,
                 icon: LeaveIcon,
                 onClick: async () => {
                   await this.props.authChannel.signOut(this.props.hubChannel);
@@ -1118,18 +1129,21 @@ class UIRoot extends Component {
             : {
                 id: "sign-in",
                 label: <FormattedMessage id="more-menu.sign-in" defaultMessage="Sign In" />,
+                imageIcon: moreSignInImageIcon,
                 icon: EnterIcon,
                 onClick: () => this.showContextualSignInDialog()
               },
           {
             id: "room-info",
-            label: <FormattedMessage id="more-menu.room-info" defaultMessage="Create Room" />,
+            label: <FormattedMessage id="more-menu.room-info" defaultMessage="Room Info" />,
+            imageIcon: moreRoomSettingsImageIcon,
             icon: HomeIcon,
             onClick: () => this.setSidebar("room-info")
           },
           {
             id: "user-profile",
             label: <FormattedMessage id="more-menu.profile" defaultMessage="Change Name & Avatar" />,
+            imageIcon: moreChangeNameImageIcon,
             icon: AvatarIcon,
             onClick: () => this.setSidebar("profile")
           }
@@ -1150,18 +1164,21 @@ class UIRoot extends Component {
             ? {
                 id: "unfavorite-room",
                 label: <FormattedMessage id="more-menu.unfavorite-room" defaultMessage="Unfavorite Room" />,
+                imageIcon: moreStarImageIcon,
                 icon: StarIcon,
                 onClick: () => this.toggleFavorited()
               }
             : {
                 id: "favorite-room",
                 label: <FormattedMessage id="more-menu.favorite-room" defaultMessage="Favorite Room" />,
+                imageIcon: moreStarImageIcon,
                 icon: StarOutlineIcon,
                 onClick: () => this.toggleFavorited()
               },
           {
             id: "favorite-rooms",
             label: <FormattedMessage id="more-menu.favorite-rooms" defaultMessage="Favorite Rooms" />,
+            imageIcon: moreStarImageIcon,
             icon: FavoritesIcon,
             onClick: () =>
               this.props.performConditionalSignIn(
@@ -1187,12 +1204,14 @@ class UIRoot extends Component {
           {
             id: "preferences",
             label: <FormattedMessage id="more-menu.preferences" defaultMessage="Preferences" />,
+            imageIcon: moreSettingsImageIcon,
             icon: SettingsIcon,
             onClick: () => this.setState({ showPrefs: true })
           },
           canCreateRoom && {
             id: "create-room",
             label: <FormattedMessage id="more-menu.create-room" defaultMessage="Create Room" />,
+            imageIcon: moreCreateRoomImageIcon,
             icon: AddIcon,
             onClick: () =>
               this.showNonHistoriedDialog(LeaveRoomModal, {
@@ -1200,21 +1219,34 @@ class UIRoot extends Component {
                 reason: LeaveReason.createRoom
               })
           },
-          (this.props.breakpoint === "sm" || this.props.breakpoint === "md") &&
-            entered && {
-              id: "leave-room",
-              label: <FormattedMessage id="more-menu.enter-leave-room" defaultMessage="Leave Room" />,
-              icon: LeaveIcon,
-              onClick: () => {
-                this.showNonHistoriedDialog(LeaveRoomModal, {
-                  destinationUrl: "/",
-                  reason: LeaveReason.leaveRoom
-                });
-              }
-            },
+          entered && {
+            id: "leave-room",
+            label: <FormattedMessage id="more-menu.enter-leave-room" defaultMessage="Leave Room" />,
+            imageIcon: moreLeaveRoomImageIcon,
+            icon: LeaveIcon,
+            onClick: () => {
+              this.showNonHistoriedDialog(LeaveRoomModal, {
+                destinationUrl: "/",
+                reason: LeaveReason.leaveRoom
+              });
+            }
+          },
+          // (this.props.breakpoint === "sm" || this.props.breakpoint === "md") &&
+          //   entered && {
+          //     id: "leave-room",
+          //     label: <FormattedMessage id="more-menu.enter-leave-room" defaultMessage="Leave Room" />,
+          //     icon: LeaveIcon,
+          //     onClick: () => {
+          //       this.showNonHistoriedDialog(LeaveRoomModal, {
+          //         destinationUrl: "/",
+          //         reason: LeaveReason.leaveRoom
+          //       });
+          //     }
+          //   },
           canCloseRoom && {
             id: "close-room",
             label: <FormattedMessage id="more-menu.close-room" defaultMessage="Close Room" />,
+            imageIcon: moreCloseRoomImageIcon,
             icon: DeleteIcon,
             onClick: () =>
               this.props.performConditionalSignIn(
@@ -1561,7 +1593,7 @@ class UIRoot extends Component {
                     {entered && (
                       <>
                         <AudioPopoverContainer scene={this.props.scene} />
-                        <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
+                        {/*<SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />*/}
                         <PlacePopoverContainer
                           scene={this.props.scene}
                           hubChannel={this.props.hubChannel}
@@ -1597,19 +1629,20 @@ class UIRoot extends Component {
                             onClick={() => exit2DInterstitialAndEnterVR(true)}
                           />
                         )}
-                      {entered && (
-                        <ToolbarButton
-                          icon={<LeaveIcon />}
-                          label={<FormattedMessage id="toolbar.leave-room-button" defaultMessage="Leave" />}
-                          preset="cancel"
-                          onClick={() => {
-                            this.showNonHistoriedDialog(LeaveRoomModal, {
-                              destinationUrl: "/",
-                              reason: LeaveReason.leaveRoom
-                            });
-                          }}
-                        />
-                      )}
+                      {/*{entered && (*/}
+                      {/*  <ToolbarButton*/}
+                      {/*    imageIcon={leaveImageIcon}*/}
+                      {/*    icon={<LeaveIcon />}*/}
+                      {/*    label={<FormattedMessage id="toolbar.leave-room-button" defaultMessage="Leave" />}*/}
+                      {/*    // preset="cancel"*/}
+                      {/*    onClick={() => {*/}
+                      {/*      this.showNonHistoriedDialog(LeaveRoomModal, {*/}
+                      {/*        destinationUrl: "/",*/}
+                      {/*        reason: LeaveReason.leaveRoom*/}
+                      {/*      });*/}
+                      {/*    }}*/}
+                      {/*  />*/}
+                      {/*)}*/}
                       <MoreMenuPopoverButton menu={moreMenu} />
                     </>
                   </>

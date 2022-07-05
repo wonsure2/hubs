@@ -35,7 +35,7 @@ export function RoomEntryModal({
       disableFullscreen
       {...rest}
       style={{
-        backgroundColor: "rgba(0,0,0,0.2)",
+        // backgroundColor: "rgba(0,0,0,0.2)",
         backgroundSize: "cover",
         borderWidth: 0
       }}

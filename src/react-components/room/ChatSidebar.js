@@ -16,6 +16,7 @@ import { EmojiPicker } from "./EmojiPicker";
 import styles from "./ChatSidebar.scss";
 import { formatMessageBody } from "../../utils/chat-message";
 import { FormattedMessage, useIntl, defineMessages, FormattedRelativeTime } from "react-intl";
+import imageIcon from "../../assets/images/yuanjing/button_icons/room/init/聊天@2x.png";
 
 export function SpawnMessageButton(props) {
   return (
@@ -438,8 +439,9 @@ export function ChatToolbarButton(props) {
   return (
     <ToolbarButton
       {...props}
+      imageIcon={imageIcon}
       icon={<ChatIcon />}
-      preset="accent4"
+      // preset="accent4"
       label={<FormattedMessage id="chat-toolbar-button" defaultMessage="Chat" />}
     />
   );

@@ -13,9 +13,30 @@ import { PlacePopoverButton } from "./PlacePopover";
 import { ObjectUrlModalContainer } from "./ObjectUrlModalContainer";
 import configs from "../../utils/configs";
 import { FormattedMessage } from "react-intl";
+import penImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/画笔@2x.png";
+import cameraImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/自拍像@2x.png";
+import avatarImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/Avatar@2x.png";
+import sceneImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/场景@2x.png";
+import uploadImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/上传@2x.png";
+import {ReactComponent as VideoIcon} from "../icons/Video.svg";
+import videoImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/自拍像@2x.png";
+import {MediaDevices} from "../../utils/media-devices-utils";
+import {ReactComponent as DesktopIcon} from "../icons/Desktop.svg";
+import desktopImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/自拍像@2x.png";
+import { useShare } from "./SharePopoverContainer";
 
 export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistoriedDialog, hubChannel }) {
   const [items, setItems] = useState([]);
+
+  const {
+    sharingSource,
+    canShareCamera,
+    toggleShareCamera,
+    canShareScreen,
+    toggleShareScreen,
+    canShareCameraToAvatar,
+    toggleShareCameraToAvatar
+  } = useShare(scene, hubChannel);
 
   useEffect(
     () => {
@@ -27,7 +48,8 @@ export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistorie
           hubChannel.can("spawn_drawing") && {
             id: "pen",
             icon: PenIcon,
-            color: "accent5",
+            imageIcon: penImageIcon,
+            // color: "accent5",
             label: <FormattedMessage id="place-popover.item-type.pen" defaultMessage="Pen" />,
             onSelect: () => scene.emit("penButtonPressed"),
             selected: hasActivePen
@@ -35,7 +57,8 @@ export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistorie
           hubChannel.can("spawn_camera") && {
             id: "camera",
             icon: CameraIcon,
-            color: "accent5",
+            imageIcon: cameraImageIcon,
+            // color: "accent5",
             label: <FormattedMessage id="place-popover.item-type.camera" defaultMessage="Camera" />,
             onSelect: () => scene.emit("action_toggle_camera"),
             selected: hasActiveCamera
@@ -65,14 +88,16 @@ export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistorie
             {
               id: "avatar",
               icon: AvatarIcon,
-              color: "accent1",
+              imageIcon: avatarImageIcon,
+              // color: "accent1",
               label: <FormattedMessage id="place-popover.item-type.avatar" defaultMessage="Avatar" />,
               onSelect: () => mediaSearchStore.sourceNavigate("avatars")
             },
             {
               id: "scene",
               icon: SceneIcon,
-              color: "accent1",
+              imageIcon: sceneImageIcon,
+              // color: "accent1",
               label: <FormattedMessage id="place-popover.item-type.scene" defaultMessage="Scene" />,
               onSelect: () => mediaSearchStore.sourceNavigate("scenes")
             },
@@ -80,12 +105,39 @@ export function PlacePopoverContainer({ scene, mediaSearchStore, showNonHistorie
             {
               id: "upload",
               icon: UploadIcon,
-              color: "accent3",
+              imageIcon: uploadImageIcon,
+              // color: "accent3",
               label: <FormattedMessage id="place-popover.item-type.upload" defaultMessage="Upload" />,
               onSelect: () => showNonHistoriedDialog(ObjectUrlModalContainer, { scene })
             }
           ];
         }
+
+        // new 移过来的
+        nextItems = [
+          ...nextItems,
+          {
+            id: "camera",
+            icon: VideoIcon,
+            imageIcon: videoImageIcon,
+            // color: "accent5",
+            label: <FormattedMessage id="share-popover.source.camera" defaultMessage="Camera" />,
+            onSelect: toggleShareCamera,
+            active: sharingSource === MediaDevices.CAMERA
+          }
+        ];
+        nextItems = [
+          ...nextItems,
+          {
+            id: "screen",
+            icon: DesktopIcon,
+            imageIcon: desktopImageIcon,
+            // color: "accent5",
+            label: <FormattedMessage id="share-popover.source.screen" defaultMessage="Screen" />,
+            onSelect: toggleShareScreen,
+            active: sharingSource === MediaDevices.SCREEN
+          }
+        ];
 
         setItems(nextItems);
       }

@@ -36,6 +36,7 @@ export const ToolbarButton = forwardRef(
       type,
       darkTextColor,
       centerIcon,
+      imageIcon,
       ...rest
     },
     ref
@@ -52,11 +53,19 @@ export const ToolbarButton = forwardRef(
         )}
         {...rest}
       >
-        <div className={classNames(styles.iconContainer, iconContainerClassName)} aria-hidden="true">
-          {icon}
-          {statusColor && <div className={classNames(styles.statusIndicator, styles["status-" + statusColor])} />}
-          {children}
-        </div>
+        {imageIcon ? (
+          <div
+            className={classNames(styles.iconContainer, iconContainerClassName)}
+            style={{ backgroundImage: `url(${imageIcon})`, backgroundSize: "contain" }}
+            aria-hidden="true"
+          />
+        ) : (
+          <div className={classNames(styles.iconContainer, iconContainerClassName)} aria-hidden="true">
+            {icon}
+            {statusColor && <div className={classNames(styles.statusIndicator, styles["status-" + statusColor])} />}
+            {children}
+          </div>
+        )}
         {label && <label>{label}</label>}
         {/*<div className={classNames(styles.iconContainer, iconContainerClassName)} aria-hidden="true">*/}
         {/*  <span style={centerIcon ? null : { marginTop: -8 }}>{icon}</span>*/}

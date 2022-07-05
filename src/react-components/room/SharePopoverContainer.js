@@ -7,8 +7,10 @@ import { SharePopoverButton } from "./SharePopover";
 import { FormattedMessage } from "react-intl";
 import useAvatar from "./useAvatar";
 import { MediaDevicesEvents, MediaDevices } from "../../utils/media-devices-utils";
+import videoImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/自拍像@2x.png";
+import desktopImageIcon from "../../assets/images/yuanjing/button_icons/tool/init/自拍像@2x.png";
 
-function useShare(scene, hubChannel) {
+export function useShare(scene, hubChannel) {
   const mediaDevicesManager = APP.mediaDevicesManager;
   const [sharingSource, setSharingSource] = useState(null);
   const [canShareCamera, setCanShareCamera] = useState(false);
@@ -136,7 +138,8 @@ export function SharePopoverContainer({ scene, hubChannel }) {
     canShareCamera && {
       id: "camera",
       icon: VideoIcon,
-      color: "accent5",
+      imageIcon: videoImageIcon,
+      // color: "accent5",
       label: <FormattedMessage id="share-popover.source.camera" defaultMessage="Camera" />,
       onSelect: toggleShareCamera,
       active: sharingSource === MediaDevices.CAMERA
@@ -144,7 +147,8 @@ export function SharePopoverContainer({ scene, hubChannel }) {
     canShareScreen && {
       id: "screen",
       icon: DesktopIcon,
-      color: "accent5",
+      imageIcon: desktopImageIcon,
+      // color: "accent5",
       label: <FormattedMessage id="share-popover.source.screen" defaultMessage="Screen" />,
       onSelect: toggleShareScreen,
       active: sharingSource === MediaDevices.SCREEN

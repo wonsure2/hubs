@@ -64,7 +64,7 @@
   }
 
   &:hover :local(.icon-container) {
-    border: 1px solid theme.$toolbar-basic-border-color;
+    border-color: theme.$toolbar-basic-border-color;
     background-color: theme.$basic-color-hover;
   }
 
@@ -75,7 +75,7 @@
 
   &:local(.selected) {
     :local(.icon-container) {
-      border-color: transparent;
+      //border-color: transparent;
       background-color: theme.$toolbar-icon-selected-bg;
     }
     svg {
@@ -682,9 +682,20 @@
   :local(.icon-container) {
     width: 48px;
     border-radius: 0px;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    border-width: 3px;
     border-right-width: 0;
+    box-shadow: inset 0 0 6px 6px rgba(255, 255, 255, .36);
+    border-color: #EFEFEF;
+    &:hover {
+      border-width: 3px;
+      border-right-width: 0;
+    }
+    &:active {
+      border-width: 3px;
+      border-right-width: 0;
+    }
   }
 }
 
@@ -698,7 +709,16 @@
   :local(.icon-container) {
     width: 48px;
     border-radius: 0px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    border-width: 3px;
+    box-shadow: inset 0 0 6px 6px rgba(255, 255, 255, .36);
+    border-color: #EFEFEF;
+    &:hover {
+      border-width: 3px;
+    }
+    &:active {
+      border-width: 3px;
+    }
   }
 }

@@ -8,9 +8,12 @@
   background-color: theme.$background1-color;
   pointer-events: auto;
   overflow-wrap: break-word;
-  
+
   @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
-    border-left: 1px solid theme.$border1-color;
+    border: 1px solid theme.$border1-color;
+    border-right-width: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 }
 
