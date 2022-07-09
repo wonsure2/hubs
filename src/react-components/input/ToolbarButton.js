@@ -56,7 +56,7 @@ export const ToolbarButton = forwardRef(
         {imageIcon ? (
           <div
             className={classNames(styles.iconContainer, iconContainerClassName)}
-            style={{ backgroundImage: `url(${imageIcon})`, backgroundSize: "contain" }}
+            style={{ backgroundImage: `url(${imageIcon})`, backgroundSize: "100% 100%" }}
             aria-hidden="true"
           />
         ) : (
