@@ -122,9 +122,9 @@
   --text-inverted-color: #{theme.$black};
 
 
-  --link-color: #{theme.$blue};
-  --link-color-hover: #{theme.$blue-hover};
-  --link-color-pressed: #{theme.$blue-pressed};
+  --link-color: #{theme.$white};
+  --link-color-hover: #{theme.$white-hover};
+  --link-color-pressed: #{theme.$white-pressed};
 
   --accept-color: #{theme.$green};
   --accept-border-color: #{theme.$green};
@@ -528,6 +528,7 @@ p, small, strong {
 }
 
 a {
+  font-weight: bold;
   color: theme.$link-color;
 
   &:hover {

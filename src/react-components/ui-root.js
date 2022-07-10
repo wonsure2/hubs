@@ -100,6 +100,7 @@ import moreSignInImageIcon from '../assets/images/yuanjing/button_icons/more/ini
 import moreRoomSettingsImageIcon from '../assets/images/yuanjing/button_icons/more/init/空间设置@2x.png';
 import moreChangeNameImageIcon from '../assets/images/yuanjing/button_icons/more/init/更换Avatar@2x.png';
 import moreStarImageIcon from '../assets/images/yuanjing/button_icons/more/init/收藏空间@2x.png';
+import moreHeartImageIcon from '../assets/images/yuanjing/button_icons/more/init/收藏此空间@2x.png';
 import moreSettingsImageIcon from '../assets/images/yuanjing/button_icons/more/init/偏好设置@2x.png';
 import moreCreateRoomImageIcon from '../assets/images/yuanjing/button_icons/more/init/新建空间@2x.png';
 import moreLeaveRoomImageIcon from '../assets/images/yuanjing/button_icons/room/init/离开@2x.png';
@@ -1178,7 +1179,7 @@ class UIRoot extends Component {
           {
             id: "favorite-rooms",
             label: <FormattedMessage id="more-menu.favorite-rooms" defaultMessage="Favorite Rooms" />,
-            imageIcon: moreStarImageIcon,
+            imageIcon: moreHeartImageIcon,
             icon: FavoritesIcon,
             onClick: () =>
               this.props.performConditionalSignIn(
@@ -1243,25 +1244,25 @@ class UIRoot extends Component {
           //       });
           //     }
           //   },
-          canCloseRoom && {
-            id: "close-room",
-            label: <FormattedMessage id="more-menu.close-room" defaultMessage="Close Room" />,
-            imageIcon: moreCloseRoomImageIcon,
-            icon: DeleteIcon,
-            onClick: () =>
-              this.props.performConditionalSignIn(
-                () => this.props.hubChannel.can("update_hub"),
-                () => {
-                  this.showNonHistoriedDialog(CloseRoomModal, {
-                    roomName: this.props.hub.name,
-                    onConfirm: () => {
-                      this.props.hubChannel.closeHub();
-                    }
-                  });
-                },
-                SignInMessages.closeRoom
-              )
-          }
+          // canCloseRoom && {
+          //   id: "close-room",
+          //   label: <FormattedMessage id="more-menu.close-room" defaultMessage="Close Room" />,
+          //   imageIcon: moreCloseRoomImageIcon,
+          //   icon: DeleteIcon,
+          //   onClick: () =>
+          //     this.props.performConditionalSignIn(
+          //       () => this.props.hubChannel.can("update_hub"),
+          //       () => {
+          //         this.showNonHistoriedDialog(CloseRoomModal, {
+          //           roomName: this.props.hub.name,
+          //           onConfirm: () => {
+          //             this.props.hubChannel.closeHub();
+          //           }
+          //         });
+          //       },
+          //       SignInMessages.closeRoom
+          //     )
+          // }
         ].filter(item => item)
       }
       // {

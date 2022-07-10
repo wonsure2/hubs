@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "../input/Button";
 import { Column } from "../layout/Column";
 import { IconButton } from "../input/IconButton";
-import { ReactComponent as AttachIcon } from "../icons/Attach.svg";
+import { ReactComponent as AttachIcon } from "../icons/Attach2.svg";
 import styles from "./ObjectUrlModal.scss";
 import classNames from "classnames";
 import { FormattedMessage } from "react-intl";

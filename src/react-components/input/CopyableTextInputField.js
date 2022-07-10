@@ -35,7 +35,7 @@ export function CopyableTextInputField({ buttonPreset, ...rest }) {
       afterInput={
         clipboard.isSupported() ? (
           <Button
-            preset={buttonPreset}
+            // preset={buttonPreset}
             onClick={clipboard.copy}
             className={styles.copyButton}
             style={{ width: `${maxLabelLength}ch` }} // ch is a unit representing the width of the 0 character
