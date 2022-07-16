@@ -15,6 +15,10 @@
     margin-bottom: 3px;
     white-space: nowrap;
   }
+
+  @media(max-width: theme.$breakpoint-sm) {
+    width: 40px;
+  }
 }
 
 :local(.icon-container) {
@@ -39,6 +43,11 @@
       fill: theme.$toolbar-icon-color;
       transition: fill 0.1s ease-in-out;
     }
+  }
+
+  @media(max-width: theme.$breakpoint-sm) {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -694,6 +703,9 @@
       border-width: 3px;
       border-right-width: 0;
     }
+    @media(max-width: theme.$breakpoint-sm) {
+      width: 40px;
+    }
   }
 }
 
@@ -716,6 +728,9 @@
     }
     &:active {
       border-width: 3px;
+    }
+    @media(max-width: theme.$breakpoint-sm) {
+      width: 40px;
     }
   }
 }

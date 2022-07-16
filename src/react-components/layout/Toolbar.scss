@@ -7,6 +7,7 @@
   //background-color: theme.$background1-color;
   //border-top: 1px solid theme.$border1-color;
 
+  justify-content: space-between;
   @media (min-width: theme.$breakpoint-lg) {
     padding: 12px 24px;
     justify-content: space-between;
@@ -18,16 +19,22 @@
   flex: 1;
   justify-content: space-around;
 
+  @media (max-width: theme.$breakpoint-lg) {
+    & > * {
+      margin: 0 4px;
+    }
+  }
+
   @media (min-width: theme.$breakpoint-lg) {
     flex: 0;
 
     & > * {
-      margin-right: 24px;
+      margin: 0 12px;
     }
 
-    &:last-child {
-      margin-right: 0px;
-    }
+    //&:last-child {
+    //  margin-right: 0px;
+    //}
   }
 }
 
@@ -38,4 +45,8 @@
   background-color: theme.$background1-color;
   border-radius: 9999px;
   box-shadow: 0 0 3px 3px theme.$border1-color;
+
+  @media(max-width: theme.$breakpoint-sm) {
+    padding: 10px;
+  }
 }

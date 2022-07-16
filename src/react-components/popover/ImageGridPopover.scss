@@ -6,6 +6,7 @@
   grid-template-columns: repeat(auto-fit, minmax(36px, 1fr));
   gap: 12px;
   padding: 16px;
+  width: 100%; // new
 
   &:not(:local(.fullscreen)) {
     max-width: 224px;

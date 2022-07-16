@@ -11,11 +11,13 @@ export function Toolbar({ className, left, center, right, ...rest }) {
       {...rest}
       style={left.props.entered ? {} : { display: "none" }}
     >
-      <div className={classNames(styles.content, styles.leftContent, styleUtils.showLg)} />
+      {/*<div className={classNames(styles.content, styles.leftContent, styleUtils.showLg)} />*/}
+      <div className={classNames(styles.content, styles.leftContent)} />
       <div className={styles.centerContentInner}>
         <div className={classNames(styles.content, styles.centerContent)}>{center}</div>
       </div>
-      <div className={classNames(styles.content, styles.rightContent, styleUtils.showLg)} />
+      {/*<div className={classNames(styles.content, styles.rightContent, styleUtils.showLg)} />*/}
+      <div className={classNames(styles.content, styles.rightContent)} />
     </div>
   );
 }
