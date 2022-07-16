@@ -150,15 +150,42 @@ export function HomePage() {
           ) : (
             <SignInButton mobile />
           )}
-          <div className={styles.logoContainer}>
+          <div className={styles.logoContainer} style={{ flexDirection: "column", alignItems: "center" }}>
             <AppLogo />
+            <div
+              style={{
+                textAlign: "center",
+                fontSize: 12,
+                color: "#F9F9F9",
+                marginTop: 6,
+                transform: "scale(0.85)",
+                whiteSpace: "nowrap"
+              }}
+            >
+              <FormattedMessage id="header.logo-slogan" defaultMessage="Enterprise Meta-universe Marketing Platform" />
+            </div>
           </div>
           {/*<div className={styles.appInfo}>*/}
           {/*  <div className={styles.appDescription}>{configs.translation("app-description")}</div>*/}
           {/*  {canCreateRooms && <CreateRoomButton />}*/}
           {/*  <PWAButton />*/}
           {/*</div>*/}
-          <div className={styles.heroImageContainer} style={{ backgroundImage: `url(${configs.image("home_background")})`, backgroundSize: "cover" }}>
+          <div className={styles.heroImageContainerWrapper}>
+            <div
+              className={styles.heroImageContainer}
+              style={{ backgroundImage: `url(${configs.image("home_background")})`, backgroundSize: "cover" }}
+            >
+              {/*<img*/}
+              {/*  alt={intl.formatMessage(*/}
+              {/*    {*/}
+              {/*      id: "home-page.hero-image-alt",*/}
+              {/*      defaultMessage: "Screenshot of {appName}"*/}
+              {/*    },*/}
+              {/*    { appName: configs.translation("app-name") }*/}
+              {/*  )}*/}
+              {/*  src={configs.image("home_background")}*/}
+              {/*/>*/}
+            </div>
             <div className={styles.heroImageContainerPanel}>
               <div className={styles.heroImageContainerPanelDesc}>
                 <p>
@@ -189,16 +216,6 @@ export function HomePage() {
                 </div>
               </div>
             </div>
-            {/*<img*/}
-            {/*  alt={intl.formatMessage(*/}
-            {/*    {*/}
-            {/*      id: "home-page.hero-image-alt",*/}
-            {/*      defaultMessage: "Screenshot of {appName}"*/}
-            {/*    },*/}
-            {/*    { appName: configs.translation("app-name") }*/}
-            {/*  )}*/}
-            {/*  src={configs.image("home_background")}*/}
-            {/*/>*/}
           </div>
         </div>
       </Container>

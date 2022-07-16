@@ -5,6 +5,10 @@
   margin: auto;
   max-width: 100%;
 
+  @media(max-width: theme.$breakpoint-sm) {
+    padding: 20px;
+  }
+
   @media(min-width: theme.$breakpoint-sm) {
     max-width: 540px;
   }

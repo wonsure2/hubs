@@ -30,7 +30,7 @@ export function Header({
       <Container as="div" className={styles.container}>
         <nav>
           <ul>
-            <li style={{ display: "flex", flexDirection: "column" }}>
+            <li style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <a href="/" className={styles.homeLink}>
                 {/*
                 This forceConfigurableLogo prop is a bit of a hack, since we want the home page on HMC to use our
@@ -41,7 +41,6 @@ export function Header({
               </a>
               <div
                 style={{
-                  width: 128,
                   textAlign: "center",
                   fontSize: 12,
                   color: "#F9F9F9",
