@@ -173,6 +173,20 @@ export function HomePage() {
                     <FormattedMessage id="home-page.have-code" defaultMessage="Have a room code?" />
                   </span>
                 </Button>
+                <div
+                  style={{
+                    width: "100%",
+                    textAlign: "center",
+                    fontSize: 12,
+                    transform: "scale(0.8333)",
+                    marginTop: 8
+                  }}
+                >
+                  <FormattedMessage
+                    id="home-page.have-code-tips"
+                    defaultMessage="Supports mobile devices, PCS, and XR devices"
+                  />
+                </div>
               </div>
             </div>
             {/*<img*/}

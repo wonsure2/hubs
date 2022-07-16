@@ -30,7 +30,7 @@ export function Header({
       <Container as="div" className={styles.container}>
         <nav>
           <ul>
-            <li>
+            <li style={{ display: "flex", flexDirection: "column" }}>
               <a href="/" className={styles.homeLink}>
                 {/*
                 This forceConfigurableLogo prop is a bit of a hack, since we want the home page on HMC to use our
@@ -39,6 +39,22 @@ export function Header({
                 */}
                 <AppLogo forceConfigurableLogo />
               </a>
+              <div
+                style={{
+                  width: 128,
+                  textAlign: "center",
+                  fontSize: 12,
+                  color: "#F9F9F9",
+                  marginTop: 6,
+                  transform: "scale(0.95)",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                <FormattedMessage
+                  id="header.logo-slogan"
+                  defaultMessage="Enterprise Meta-universe Marketing Platform"
+                />
+              </div>
             </li>
             {/*{enableSpoke && (*/}
             {/*  <li>*/}
@@ -106,6 +122,7 @@ export function Header({
                   values={{ email }}
                 />
               </span>
+              <span style={{ marginLeft: 8 }}>|</span>
               <a style={{ color: "#F9F9F9" }} href="#" onClick={onSignOut}>
                 <FormattedMessage id="header.sign-out" defaultMessage="Sign Out" />
               </a>

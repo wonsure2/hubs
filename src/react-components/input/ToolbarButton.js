@@ -66,7 +66,7 @@ export const ToolbarButton = forwardRef(
             {children}
           </div>
         )}
-        {label && <label style={{ fontSize: 13, letterSpacing: 2, textIndent: 2 }}>{label}</label>}
+        {label && <label style={{ fontSize: 14, letterSpacing: 2, textIndent: 2 }}>{label}</label>}
         {/*<div className={classNames(styles.iconContainer, iconContainerClassName)} aria-hidden="true">*/}
         {/*  <span style={centerIcon ? null : { marginTop: -8 }}>{icon}</span>*/}
         {/*  {statusColor && <div className={classNames(styles.statusIndicator, styles["status-" + statusColor])} />}*/}
