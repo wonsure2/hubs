@@ -8,6 +8,8 @@
   align-items: center;
   width: 48px;
 
+  overflow: visible; // iPhone 兼容
+
   label {
     cursor: pointer;
     color: theme.$text1-color;
