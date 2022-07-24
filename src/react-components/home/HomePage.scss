@@ -21,10 +21,17 @@
   }
 }
 
+:local(.top-part-auto-mobile) {
+  @media(max-width: theme.$breakpoint-sm) {
+    padding: 0!important;
+    margin: 0!important;
+  }
+}
+
 :local(.logo-container) {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 20px 4px;
   width: 150px;
 
   img {
@@ -35,6 +42,20 @@
   @media (min-width: theme.$breakpoint-lg) {
     display: none;
   }
+
+  @media (max-width: theme.$breakpoint-sm) {
+    width: 100%;
+    flex-direction: row!important;
+    margin-top: 20px;
+    background-color: rgb(38, 51, 89);
+    img {
+      width: 50px;
+    }
+    div {
+      font-size: 20px!important;
+      margin-top: 0!important;
+    }
+  }
 }
 
 :local(.sign-in-container) {
@@ -42,13 +63,27 @@
   flex-direction: column;
   align-items: center;
   flex: 1;
-  @media(min-width: theme.$breakpoint-lg) {
+  @media(min-width: theme.$breakpoint-lg)  {
+    display: none;
+  }
+  @media(max-width: theme.$breakpoint-sm) {
+    display: none;
+  }
+}
+
+:local(.sign-in-container-mobile) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  @media(min-width: theme.$breakpoint-sm) {
     display: none;
   }
 }
 
 :local(.mobile-sign-out) {
-  padding: 0.5rem;
+  padding: 1rem;
+  font-size: 12px;
 }
 
 :local(.hero) {
@@ -74,6 +109,9 @@
   padding-top: 53.65677045619116%;
   border-radius: 8px;
 
+  @media(max-width: theme.$breakpoint-sm) {
+    border-radius: 0;
+  }
   //img {
   //  @media (min-width: theme.$breakpoint-lg) {
   //    border-radius: 16px;
@@ -100,12 +138,67 @@
 :local(.hero-image-container-panel-desc) {
   padding: 6% 10%;
   color: #F9F9F9;
+
+  @media(max-width: theme.$breakpoint-sm) {
+    display: none;
+  }
+}
+
+:local(.hero-image-container-panel-desc-mobile) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(38, 51, 89);
+  padding: 60px 0;
+
+  @media(min-width: theme.$breakpoint-sm) {
+    display: none;
+  }
+}
+
+:local(.hero-image-container-panel-desc-mobile-logo-img) {
+  width: 180px
+}
+
+:local(.hero-image-container-panel-desc-mobile-content1) {
+  font-size: 22px;
+  margin-top: 20px;
+  text-align: center;
+  color: #bbbbbb;
+}
+
+:local(.hero-image-container-panel-desc-mobile-content2) {
+  font-size: 22px;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 300;
+  line-height: 2em;
+}
+
+:local(.mobile-toggle-on) {
+  @media(min-width: theme.$breakpoint-sm) {
+    display: none;
+  }
+}
+
+:local(.mobile-toggle-off) {
+  @media(max-width: theme.$breakpoint-sm) {
+    display: none;
+  }
 }
 
 :local(.hero-image-container-panel-buttons) {
   display: flex;
   flex-direction: column;
   padding: 3%;
+  @media(max-width: theme.$breakpoint-sm) {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(69, 91, 150);
+  }
 }
 
 :local(.app-info) {
@@ -194,6 +287,11 @@
   margin-top: 60px !important;
   display: flex;
   flex-direction: column;
+  @media(max-width: theme.$breakpoint-sm) {
+    background-image: url("../../assets/images/yuanjing/home/rooms-bg.png");
+    background-size: contain;
+    margin: 0!important;
+  }
 }
 
 :local(.rooms-heading) {
@@ -201,6 +299,9 @@
   font-size: 24px;
   margin-bottom: 16px;
   color: #f9f9f9;
+  @media(max-width: theme.$breakpoint-sm) {
+    color: #666;
+  }
 }
 
 :local(.rooms) {

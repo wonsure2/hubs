@@ -51,7 +51,7 @@ export function Header({
               >
                 <FormattedMessage
                   id="header.logo-slogan"
-                  defaultMessage="Enterprise Meta-universe Marketing Platform"
+                  defaultMessage="Ent MU Marketing Platform"
                 />
               </div>
             </li>

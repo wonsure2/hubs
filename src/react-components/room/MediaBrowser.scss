@@ -39,7 +39,7 @@
 }
 
 :local(.facets-nav) {
-  background-color: theme.$background2-color;
+  //background-color: theme.$background2-color;
 }
 
 :local(.content) {
@@ -93,7 +93,7 @@
       *[stroke=\#000] {
         stroke: theme.$disabled-icon-color;
       }
-  
+
       *[fill=\#000] {
         fill: theme.$disabled-icon-color;
       }

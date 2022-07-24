@@ -21,6 +21,7 @@ import { SignInButton } from "./SignInButton";
 import { AppLogo } from "../misc/AppLogo";
 import { isHmc } from "../../utils/isHmc";
 import maskEmail from "../../utils/mask-email";
+import {getAppLogo} from "../../utils/get-app-logo";
 
 function getMockRooms() {
   const mockRooms = [
@@ -131,7 +132,7 @@ export function HomePage() {
   const email = auth.email;
   return (
     <PageContainer className={styles.homePage}>
-      <Container>
+      <Container className={styles.topPartAutoMobile}>
         <div className={styles.hero}>
           <div style={{ height: 20 }}>{/*窄屏模式下 width 为0，所以也不影响 UI*/}</div>
           {auth.isSignedIn ? (
@@ -148,7 +149,9 @@ export function HomePage() {
               </a>
             </div>
           ) : (
-            <SignInButton mobile />
+            <div className={styles.mobileToggleOff}>
+              <SignInButton mobile />
+            </div>
           )}
           <div className={styles.logoContainer} style={{ flexDirection: "column", alignItems: "center" }}>
             <AppLogo />
@@ -162,7 +165,7 @@ export function HomePage() {
                 whiteSpace: "nowrap"
               }}
             >
-              <FormattedMessage id="header.logo-slogan" defaultMessage="Enterprise Meta-universe Marketing Platform" />
+              <FormattedMessage id="header.logo-slogan" defaultMessage="ENT MU Marketing Platform" />
             </div>
           </div>
           {/*<div className={styles.appInfo}>*/}
@@ -192,7 +195,47 @@ export function HomePage() {
                   项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述项目描述
                 </p>
               </div>
+              <div className={styles.heroImageContainerPanelDescMobile}>
+                <img src={getAppLogo()} alt="" className={styles.heroImageContainerPanelDescMobileLogoImg} />
+                <div className={styles.heroImageContainerPanelDescMobileContent}>
+                  <div className={styles.heroImageContainerPanelDescMobileContent1}>
+                    <FormattedMessage
+                      id="header.mobile-middle-content-subtitle"
+                      defaultMessage="2D Information Display & 3D Immersive Interaction"
+                    />
+                  </div>
+                  <div className={styles.heroImageContainerPanelDescMobileContent2}>
+                    <FormattedMessage
+                      id="header.mobile-middle-content-text1"
+                      defaultMessage="Create one-stop meta-universe"
+                    />
+                    <br />
+                    <FormattedMessage
+                      id="header.mobile-middle-content-text2"
+                      defaultMessage="marketing platform for enterprises"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className={styles.heroImageContainerPanelButtons}>
+                {auth.isSignedIn ? (
+                  <div className={styles.signInContainerMobile}>
+                    <span>
+                      <FormattedMessage
+                        id="header.signed-in-as-mobile"
+                        defaultMessage="Signed in as {email}"
+                        values={{ email: maskEmail(email) }}
+                      />
+                    </span>
+                    <a href="#" onClick={auth.signOut} className={styles.mobileSignOut}>
+                      <FormattedMessage id="header.sign-out-mobile" defaultMessage="Sign Out" />
+                    </a>
+                  </div>
+                ) : (
+                  <div className={styles.mobileToggleOn} style={{ marginBottom: 20 }}>
+                    <SignInButton mobile />
+                  </div>
+                )}
                 {canCreateRooms && <CreateRoomButton style={{ width: 208 }} />}
                 <div style={{ height: 20 }} />
                 <Button lg preset="landing" as="a" href="/link" style={{ width: 208 }}>
