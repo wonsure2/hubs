@@ -112,7 +112,7 @@ export function Header({
         </nav>
         <div className={styles.signIn}>
           {isSignedIn ? (
-            <div>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <span style={{ color: "#F9F9F9" }}>
                 <FormattedMessage
                   id="header.signed-in-as"
@@ -122,7 +122,7 @@ export function Header({
                 />
               </span>
               <span style={{ marginLeft: 8 }}>|</span>
-              <a style={{ color: "#F9F9F9" }} href="#" onClick={onSignOut}>
+              <a style={{ color: "#F9F9F9", fontSize: 16 }} href="#" onClick={onSignOut}>
                 <FormattedMessage id="header.sign-out" defaultMessage="Sign Out" />
               </a>
             </div>

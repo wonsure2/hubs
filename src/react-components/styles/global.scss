@@ -176,7 +176,8 @@
   --primary-color-hover: #{theme.$blue-hover}; // blue
   --primary-color-pressed: #{theme.$blue-pressed}; // blue
 
-  --secondary-color: #{theme.$lightgrey};
+  //--secondary-color: #{theme.$lightgrey};
+  --secondary-color: rgba(255, 255, 255, 0.67);
   --secondary-color-hover: #{theme.$lightgrey-hover};
   --secondary-color-pressed: #{theme.$lightgrey-pressed};
 

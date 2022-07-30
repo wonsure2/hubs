@@ -303,84 +303,88 @@ export function HomePage() {
       {/*    </Column>*/}
       {/*  </Container>*/}
       {/*)}*/}
-      {sortedPublicRooms.length > 0 && (
-        <Container className={styles.roomsContainer}>
-          <h3 className={styles.roomsHeading}>
-            <FormattedMessage id="home-page.public--rooms" defaultMessage="Public Rooms" />
-          </h3>
-          <Column grow padding className={styles.rooms}>
-            <MediaGrid center>
-              {sortedPublicRooms.map((room, index) => {
-                if (index >= showMorePublicRooms) {
-                  return null;
-                }
-                return (
-                  <MediaTile
-                    key={room.id}
-                    entry={room}
-                    description={room.description}
-                    processThumbnailUrl={(entry, width, height) =>
-                      scaledThumbnailUrlFor(entry.images.preview.url, width, height)
-                    }
-                  />
-                );
-              })}
-            </MediaGrid>
-          </Column>
-          {sortedPublicRooms.length > showMorePublicRooms && (
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <Button
-                thin
-                style={{ width: "100%", maxWidth: 300 }}
-                onClick={() => {
-                  setShowMorePublicRooms(value => value + 6);
-                }}
-              >
-                <FormattedMessage id="home-page.more-public-rooms" defaultMessage="Load more" />
-              </Button>
-            </div>
-          )}
-        </Container>
-      )}
-      {sortedFavoriteRooms.length > 0 && (
-        <Container className={styles.roomsContainer}>
-          <h3 className={styles.roomsHeading}>
-            <FormattedMessage id="home-page.favorite-rooms" defaultMessage="Favorite Rooms" />
-          </h3>
-          <Column grow padding className={styles.rooms}>
-            <MediaGrid center>
-              {sortedFavoriteRooms.map((room, index) => {
-                if (index >= showMoreFavRooms) {
-                  return null;
-                }
-                return (
-                  <MediaTile
-                    key={room.id}
-                    entry={room}
-                    description={room.description}
-                    processThumbnailUrl={(entry, width, height) =>
-                      scaledThumbnailUrlFor(entry.images.preview.url, width, height)
-                    }
-                  />
-                );
-              })}
-            </MediaGrid>
-          </Column>
-          {sortedFavoriteRooms.length > showMoreFavRooms && (
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <Button
-                thin
-                style={{ width: "100%", maxWidth: 300 }}
-                onClick={() => {
-                  setShowMoreFavRooms(value => value + 6);
-                }}
-              >
-                <FormattedMessage id="home-page.more-fav-rooms" defaultMessage="Load more" />
-              </Button>
-            </div>
-          )}
-        </Container>
-      )}
+      <div className={styles.allRoomsContainer}>
+        {sortedPublicRooms.length > 0 && (
+          <Container className={styles.roomsContainer}>
+            <h3 className={styles.roomsHeading}>
+              <FormattedMessage id="home-page.public--rooms" defaultMessage="Public Rooms" />
+            </h3>
+            <Column grow padding className={styles.rooms}>
+              <MediaGrid center>
+                {sortedPublicRooms.map((room, index) => {
+                  if (index >= showMorePublicRooms) {
+                    return null;
+                  }
+                  return (
+                    <MediaTile
+                      key={room.id}
+                      entry={room}
+                      description={room.description}
+                      processThumbnailUrl={(entry, width, height) =>
+                        scaledThumbnailUrlFor(entry.images.preview.url, width, height)
+                      }
+                      infoStyle={{ background: "rgba(99, 99, 99, 0.2)", color: "rgb(72, 92, 149)" }}
+                    />
+                  );
+                })}
+              </MediaGrid>
+            </Column>
+            {sortedPublicRooms.length > showMorePublicRooms && (
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button
+                  thin
+                  style={{ width: "100%", maxWidth: 300 }}
+                  onClick={() => {
+                    setShowMorePublicRooms(value => value + 6);
+                  }}
+                >
+                  <FormattedMessage id="home-page.more-public-rooms" defaultMessage="Load more" />
+                </Button>
+              </div>
+            )}
+          </Container>
+        )}
+        {sortedFavoriteRooms.length > 0 && (
+          <Container className={styles.roomsContainer}>
+            <h3 className={styles.roomsHeading}>
+              <FormattedMessage id="home-page.favorite-rooms" defaultMessage="Favorite Rooms" />
+            </h3>
+            <Column grow padding className={styles.rooms}>
+              <MediaGrid center>
+                {sortedFavoriteRooms.map((room, index) => {
+                  if (index >= showMoreFavRooms) {
+                    return null;
+                  }
+                  return (
+                    <MediaTile
+                      key={room.id}
+                      entry={room}
+                      description={room.description}
+                      processThumbnailUrl={(entry, width, height) =>
+                        scaledThumbnailUrlFor(entry.images.preview.url, width, height)
+                      }
+                      infoStyle={{ background: "rgba(99, 99, 99, 0.2)", color: "rgb(72, 92, 149)" }}
+                    />
+                  );
+                })}
+              </MediaGrid>
+            </Column>
+            {sortedFavoriteRooms.length > showMoreFavRooms && (
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <Button
+                  thin
+                  style={{ width: "100%", maxWidth: 300 }}
+                  onClick={() => {
+                    setShowMoreFavRooms(value => value + 6);
+                  }}
+                >
+                  <FormattedMessage id="home-page.more-fav-rooms" defaultMessage="Load more" />
+                </Button>
+              </div>
+            )}
+          </Container>
+        )}
+      </div>
       {/*<Container>*/}
       {/*  <Column center grow>*/}
       {/*    <Button thin preset="landing" as="a" href="/link">*/}
