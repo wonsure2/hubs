@@ -28,7 +28,7 @@ header {
 
     li {
       &:first-child {
-        padding-top: 20px;
+        //padding-top: 20px;
         @media(min-width: theme.$breakpoint-lg) {
           img {
             width: 100%;
@@ -71,10 +71,14 @@ header {
   align-items: center;
 
   @media(min-width: theme.$breakpoint-lg) {
-    height: 140px;
     flex-direction: row;
     align-items: inherit;
   }
+}
+
+:local(.container-nav) {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 :local(.home-link) {
