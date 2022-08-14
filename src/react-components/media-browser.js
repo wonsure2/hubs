@@ -553,6 +553,7 @@ class MediaBrowserContainer extends Component {
                   onEdit={onEdit}
                   onShowSimilar={onShowSimilar}
                   onCopy={onCopy}
+                  infoStyle={{ minHeight: 100 }}
                 />
               );
             })}
