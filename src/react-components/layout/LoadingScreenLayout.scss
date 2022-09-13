@@ -20,6 +20,10 @@
   @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
     font-size: theme.$font-size-md;
   }
+
+  @media(max-width: theme.$breakpoint-sm) {
+    background-image: url("../../assets/images/yuanjing/loading/loading-background.png");
+  }
 }
 
 :local(.center) {
@@ -30,8 +34,7 @@
   // Keep arbitrary-sized logos from making the page jump on load
   position: absolute;
   transform: translateY(calc(-100% - 20px));
-  max-width: 260px;
-  max-height: 140px;
+  max-width: 350px;
 }
 
 :local(.bottom) {
